@@ -1,0 +1,30 @@
+name: Tweet übernehmen
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: write
+  issues: write
+concurrency: add-tweet
+jobs:
+  add:
+    # Nur Issues vom Repo-Besitzer mit Titel "tweet:" werden übernommen.
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'tweet:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tweet in tweets.json eintragen
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node scripts/add-tweet.js
+      - name: Commit
+        run: |
+          git config user.name "tweet-hub-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tweets.json
+          git diff --cached --quiet && echo "Keine Änderung" || git commit -m "${{ github.event.issue.title }}"
+          git push
+      - name: Issue schließen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }} --comment "In die Timeline übernommen ✓"

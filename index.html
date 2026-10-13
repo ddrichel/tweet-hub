@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tweet Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="col">
+  <header class="profile">
+    <div class="banner"></div>
+    <div class="profile-row">
+      <div class="avatar big" id="avatar">D</div>
+      <a class="btn ghost" href="add.html">+ Tweet übernehmen</a>
+    </div>
+    <h1 id="name"></h1>
+    <div class="muted" id="handle"></div>
+    <p id="bio"></p>
+    <div class="muted small"><b id="count">0</b> Tweets</div>
+  </header>
+  <nav class="tabs"><span class="active">Tweets</span></nav>
+  <section id="feed"><p class="empty">Lade …</p></section>
+</main>
+<script src="render.js"></script>
+<script>
+(async () => {
+  const feed = document.getElementById('feed');
+  try {
+    const res = await fetch('tweets.json?t=' + Date.now());
+    const data = await res.json();
+    const p = data.profile || {};
+    document.getElementById('name').textContent = p.name || '';
+    document.getElementById('handle').textContent = p.handle ? '@' + p.handle : '';
+    document.getElementById('bio').textContent = p.bio || '';
+    document.getElementById('avatar').textContent = (p.name || 'D')[0];
+    const tweets = (data.tweets || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+    document.getElementById('count').textContent = tweets.length;
+    feed.innerHTML = tweets.length ? '' : '<p class="empty">Noch keine Tweets. Übernimm deinen ersten mit dem Bookmarklet.</p>';
+    tweets.forEach(t => feed.appendChild(renderTweet(t, p)));
+  } catch (e) {
+    feed.innerHTML = '<p class="empty">tweets.json konnte nicht geladen werden.</p>';
+  }
+})();
+</script>
+</body>
+</html>

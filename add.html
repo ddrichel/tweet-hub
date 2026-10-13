@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tweet übernehmen · Tweet Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="col">
+  <div class="panel"><a href="./">← Zur Timeline</a></div>
+
+  <section class="panel">
+    <h2>Tweet übernehmen</h2>
+    <p class="small muted">In der X-App beim Tweet: <b>Teilen → Link kopieren</b>. Dann hier:</p>
+    <p><button class="btn" id="paste">📋 Link einfügen und speichern</button></p>
+    <label for="url">Link zum Tweet</label>
+    <input id="url" inputmode="url" placeholder="https://x.com/deinname/status/…">
+    <details>
+      <summary class="small muted">Text selbst eingeben (optional)</summary>
+      <textarea id="text" placeholder="Leer lassen, dann wird der Text automatisch geholt."></textarea>
+      <div id="preview"></div>
+    </details>
+    <p><button class="btn ghost" id="save">Bei GitHub speichern</button></p>
+    <p class="small muted">Öffnet GitHub mit allem ausgefüllt. Du tippst nur <b>Submit</b>, nach etwa einer Minute steht der Tweet in der Timeline.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Am Computer: Bookmarklet</h2>
+    <p class="small muted">Diesen Button in die Lesezeichenleiste ziehen. Auf x.com beim Tweet anklicken, dann Submit.</p>
+    <a class="bookmarklet" id="bm" href="#">→ Tweet Hub</a>
+  </section>
+
+  <section class="panel" id="repoPanel" hidden>
+    <h2>Repository</h2>
+    <p class="small muted">Konnte nicht automatisch erkannt werden (z. B. bei eigener Domain).</p>
+    <input id="repo" placeholder="besitzer/tweet-hub">
+  </section>
+</main>
+<script src="render.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+// Repo aus der GitHub-Pages-Adresse ableiten (owner.github.io/repo), damit Forks ohne Anpassung laufen.
+function detectRepo() {
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  const first = location.pathname.split('/').filter(Boolean)[0];
+  if (m && first && !first.endsWith('.html')) return m[1] + '/' + first;
+  if (m) return m[1] + '/' + m[1] + '.github.io';
+  return '';
+}
+const repo = () => detectRepo() || $('repo').value.trim();
+if (!detectRepo()) $('repoPanel').hidden = false;
+
+function issueUrl(r, t) {
+  const title = 'tweet: ' + (t.text.trim() ? t.text.replace(/\s+/g, ' ').slice(0, 60) : t.url);
+  const body = '```json\n' + JSON.stringify(t, null, 2) + '\n```';
+  return 'https://github.com/' + r + '/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+}
+
+function currentTweet() {
+  const url = $('url').value.trim();
+  return {
+    id: (url.match(/status\/(\d+)/) || [])[1] || '',
+    url,
+    handle: (url.match(/(?:x|twitter)\.com\/([^/]+)\/status/) || [])[1] || '',
+    text: $('text').value,
+    date: '',
+    media: []
+  };
+}
+function showPreview() {
+  const t = currentTweet();
+  $('preview').innerHTML = '';
+  if (t.text.trim()) $('preview').appendChild(renderTweet(t));
+}
+$('text').oninput = showPreview;
+
+function submit() {
+  const t = currentTweet();
+  if (!t.text.trim() && !t.id) { alert('Bitte den Link zum Tweet einfügen.'); return; }
+  if (!repo()) { alert('Bitte Repository angeben.'); return; }
+  location.href = issueUrl(repo(), t);
+}
+$('save').onclick = submit;
+$('paste').onclick = async () => {
+  try {
+    const clip = (await navigator.clipboard.readText()).trim();
+    const m = clip.match(/https:\/\/(?:x|twitter)\.com\/[^\s/]+\/status\/\d+/);
+    if (m) { $('url').value = m[0]; submit(); return; }
+    if (clip) $('text').value = clip;
+  } catch {}
+  alert('Kein Tweet-Link in der Zwischenablage. Bitte unten ins Feld einfügen.');
+  $('url').focus();
+};
+
+// Bookmarklet: liest den Tweet auf x.com aus und öffnet direkt das vorausgefüllte GitHub-Issue.
+function buildBookmarklet(r) {
+  const code = `(()=>{const R=${JSON.stringify(r)};
+const arts=[...document.querySelectorAll('article[data-testid="tweet"]')];
+if(!arts.length){alert('Tweet Hub: Kein Tweet auf dieser Seite gefunden.');return}
+const sid=(location.pathname.match(/\\/status\\/(\\d+)/)||[])[1];
+const link=a=>{const t=a.querySelector('time');return t&&t.closest('a')};
+let art=sid?arts.find(a=>{const l=link(a);return l&&l.href.includes(sid)}):arts.find(a=>!a.querySelector('[data-testid="socialContext"]'));
+art=art||arts[0];
+const txt=n=>[...n.childNodes].map(c=>c.nodeType===3?c.textContent:c.tagName==='IMG'?(c.alt||''):c.tagName==='A'?c.textContent.replace(/\\u2026$/,''):txt(c)).join('');
+const tx=art.querySelector('[data-testid="tweetText"]');
+const tm=art.querySelector('time');
+const l=link(art);
+const url=l?l.href.split('?')[0]:location.href.split('?')[0];
+const d={id:(url.match(/status\\/(\\d+)/)||[])[1]||'',url,handle:(url.match(/\\.com\\/([^/]+)\\/status/)||[])[1]||'',
+text:tx?txt(tx):'',date:tm?tm.getAttribute('datetime'):new Date().toISOString(),
+media:[...art.querySelectorAll('img[src*="pbs.twimg.com/media"]')].map(i=>i.src.replace(/name=\\w+/,'name=large'))};
+const title='tweet: '+d.text.replace(/\\s+/g,' ').slice(0,60);
+const body='\`\`\`json\\n'+JSON.stringify(d,null,2)+'\\n\`\`\`';
+window.open('https://github.com/'+R+'/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body),'_blank')})()`;
+  return 'javascript:' + encodeURIComponent(code.replace(/\n/g, ''));
+}
+function updateBookmarklet() { $('bm').href = buildBookmarklet(repo()); }
+$('repo').oninput = updateBookmarklet;
+updateBookmarklet();
+$('bm').onclick = e => { e.preventDefault(); alert('In die Lesezeichenleiste ziehen, nicht klicken.'); };
+</script>
+</body>
+</html>
