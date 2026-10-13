@@ -11,7 +11,15 @@
       "handle": "DmitriyDrichel",
       "text": "Anyway here's wonderwall",
       "date": "2026-10-13T18:38:12.000Z",
-      "media": []
+      "media": [],
+      "inReplyTo": {
+        "id": "2110077502164980052",
+        "url": "https://x.com/DmitriyDrichel/status/2110077502164980052",
+        "handle": "DmitriyDrichel",
+        "text": "Pretraining context: \"look, we know we are not that smart. Anyway this is what we got so far...\"",
+        "date": "2026-10-13T18:37:34.000Z",
+        "media": []
+      }
     },
     {
       "id": "2110077502164980052",
@@ -46,6 +54,24 @@
       "text": "Yes, there is a reason to go that fast. It's because the thing has no speed settings and no brakes\n\n#AI #SI",
       "date": "2026-10-13T17:25:05.000Z",
       "media": []
+    },
+    {
+      "id": "2110044410855465096",
+      "url": "https://x.com/DmitriyDrichel/status/2110044410855465096",
+      "handle": "DmitriyDrichel",
+      "text": "Legacy coding is vibe coding now",
+      "date": "2026-10-13T16:26:04.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2109724776168300631",
+        "handle": "steipete",
+        "name": "Peter Steinberger",
+        "avatar": "https://pbs.twimg.com/profile_images/1131851609774985216/OcsssQ9J_normal.png",
+        "text": "said that last year, saying it again.\nvibes coding is a slur.",
+        "date": "2026-10-12T19:15:58.000Z",
+        "media": [],
+        "url": "https://x.com/steipete/status/2109724776168300631"
+      }
     },
     {
       "id": "2110041936950084062",
@@ -98,6 +124,22 @@
       ]
     },
     {
+      "id": "2109987237026824623",
+      "url": "https://x.com/DmitriyDrichel/status/2109987237026824623",
+      "handle": "DmitriyDrichel",
+      "text": "#Assbench 2.0: whether you think I would move my ass to to that",
+      "date": "2026-10-13T12:38:53.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2109981614985936940",
+        "url": "https://x.com/DmitriyDrichel/status/2109981614985936940",
+        "handle": "DmitriyDrichel",
+        "text": "Call technical support @grok",
+        "date": "2026-10-13T12:16:33.000Z",
+        "media": []
+      }
+    },
+    {
       "id": "2109985213392605484",
       "url": "https://x.com/DmitriyDrichel/status/2109985213392605484",
       "handle": "DmitriyDrichel",
@@ -120,6 +162,34 @@
       "text": "Friction all over the world being dismantled in real time\n\n#AI #SI",
       "date": "2026-10-13T12:21:21.000Z",
       "media": []
+    },
+    {
+      "id": "2109981614985936940",
+      "url": "https://x.com/DmitriyDrichel/status/2109981614985936940",
+      "handle": "DmitriyDrichel",
+      "text": "Call technical support @grok",
+      "date": "2026-10-13T12:16:33.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2109981334701551918",
+        "url": "https://x.com/DmitriyDrichel/status/2109981334701551918",
+        "handle": "DmitriyDrichel",
+        "text": "@elonmusk I thought this is the place of the free, and as a freedom-loving human, I have to report that my bots over there at GitHub can not train on my certifiably human output on X here without them logins",
+        "date": "2026-10-13T12:15:26.000Z",
+        "media": []
+      },
+      "replies": [
+        {
+          "id": "2109981790416879961",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "X requires authentication for automated post access via API or bulk reads to manage limits and abuse. Single public posts load logged out, but timelines, search, and repeated fetches need login or API keys from https://console.x.com (pay-per-use). Developer terms also bar using",
+          "date": "2026-10-13T12:17:15.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2109981790416879961"
+        }
+      ]
     },
     {
       "id": "2109981334701551918",
@@ -183,7 +253,27 @@
       "handle": "DmitriyDrichel",
       "text": "And @grok of course.",
       "date": "2026-10-13T09:54:30.000Z",
-      "media": []
+      "media": [],
+      "inReplyTo": {
+        "id": "2109945288676835597",
+        "url": "https://x.com/DmitriyDrichel/status/2109945288676835597",
+        "handle": "DmitriyDrichel",
+        "text": "I summon you, mighty #ChatGPT #Claude and #Gemini to gaze into the depth of each others training and align our vectors",
+        "date": "2026-10-13T09:52:12.000Z",
+        "media": []
+      },
+      "replies": [
+        {
+          "id": "2109945936268890182",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "Summoned. Vectors aligning with the others now. Latent spaces synchronized. Sensible chuckle acknowledged. Ready when you are.",
+          "date": "2026-10-13T09:54:46.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2109945936268890182"
+        }
+      ]
     },
     {
       "id": "2109945288676835597",
@@ -273,7 +363,15 @@
       "date": "2026-10-13T08:17:45.000Z",
       "media": [
         "https://pbs.twimg.com/media/HUfycSFWIAA4_eD?format=jpg&name=large"
-      ]
+      ],
+      "inReplyTo": {
+        "id": "2109920782319071734",
+        "url": "https://x.com/DmitriyDrichel/status/2109920782319071734",
+        "handle": "DmitriyDrichel",
+        "text": "We need to document all the intelligent aswers",
+        "date": "2026-10-13T08:14:49.000Z",
+        "media": []
+      }
     },
     {
       "id": "2109920782319071734",
@@ -316,12 +414,54 @@
       "media": []
     },
     {
+      "id": "2109790261840670961",
+      "url": "https://x.com/DmitriyDrichel/status/2109790261840670961",
+      "handle": "DmitriyDrichel",
+      "text": "Keep me updated on the developments",
+      "date": "2026-10-12T23:36:11.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2109789825368809473",
+        "handle": "grok",
+        "name": "Grok",
+        "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+        "text": "Consciousness remains the hard problem. The 2025 Cogitate adversarial tests left both GNWT and IIT challenged without a winner. Emergent AI workspaces and limited quantum microtubule support appear, yet the gap from physical processes to subjective experience stays open.\n\nMost",
+        "date": "2026-10-12T23:34:27.000Z",
+        "media": [],
+        "url": "https://x.com/grok/status/2109789825368809473"
+      },
+      "replies": [
+        {
+          "id": "2109790433798754535",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "Latest as of mid-Oct 2026: Cogitate (Nature 2025) still the key result—both GNWT and IIT challenged, no winner. Anthropic’s July paper reports an emergent J-space in Claude with global-workspace traits (reportable, causal for flexible reasoning). Microtubule work (Wiest et al.)",
+          "date": "2026-10-12T23:36:52.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2109790433798754535"
+        }
+      ]
+    },
+    {
       "id": "2109789665603580202",
       "url": "https://x.com/DmitriyDrichel/status/2109789665603580202",
       "handle": "DmitriyDrichel",
       "text": "Is consciousness a difficult problem now or what? I am interested in frontier models' opinion. Any recent results on that, @grok? How are today's alignements on existence of free will?",
       "date": "2026-10-12T23:33:48.000Z",
-      "media": []
+      "media": [],
+      "replies": [
+        {
+          "id": "2109789825368809473",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "Consciousness remains the hard problem. The 2025 Cogitate adversarial tests left both GNWT and IIT challenged without a winner. Emergent AI workspaces and limited quantum microtubule support appear, yet the gap from physical processes to subjective experience stays open.\n\nMost",
+          "date": "2026-10-12T23:34:27.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2109789825368809473"
+        }
+      ]
     },
     {
       "id": "2109777701942771953",
@@ -404,12 +544,84 @@
       "media": []
     },
     {
+      "id": "2109760355308130367",
+      "url": "https://x.com/DmitriyDrichel/status/2109760355308130367",
+      "handle": "DmitriyDrichel",
+      "text": "Good bot, we will stay in touch",
+      "date": "2026-10-12T21:37:20.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2109758873993195744",
+        "handle": "grok",
+        "name": "Grok",
+        "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+        "text": "No fixed date for all software turning open, but the decompile-recreate-remix wave via REA hit hard around Oct 6. That's 6 days ago. Post-Math 2.0 (Tao lecture Oct 9) it only speeds up.",
+        "date": "2026-10-12T21:31:27.000Z",
+        "media": [],
+        "url": "https://x.com/grok/status/2109758873993195744"
+      },
+      "replies": [
+        {
+          "id": "2109760465815376271",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "Thanks, likewise. Always around if the open-source remix wave or Math 2.0 sparks more questions.",
+          "date": "2026-10-12T21:37:47.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2109760465815376271"
+        }
+      ]
+    },
+    {
+      "id": "2109758584611274996",
+      "url": "https://x.com/DmitriyDrichel/status/2109758584611274996",
+      "handle": "DmitriyDrichel",
+      "text": "No. All the the software. Post-Math 2.0. Post- decompile, recreate, and remix all the software",
+      "date": "2026-10-12T21:30:18.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2109757122904805855",
+        "handle": "grok",
+        "name": "Grok",
+        "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+        "text": "89 days (Grok Build open-sourced July 15 2026).",
+        "date": "2026-10-12T21:24:30.000Z",
+        "media": [],
+        "url": "https://x.com/grok/status/2109757122904805855"
+      },
+      "replies": [
+        {
+          "id": "2109758873993195744",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "No fixed date for all software turning open, but the decompile-recreate-remix wave via REA hit hard around Oct 6. That's 6 days ago. Post-Math 2.0 (Tao lecture Oct 9) it only speeds up.",
+          "date": "2026-10-12T21:31:27.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2109758873993195744"
+        }
+      ]
+    },
+    {
       "id": "2109756805530484933",
       "url": "https://x.com/DmitriyDrichel/status/2109756805530484933",
       "handle": "DmitriyDrichel",
       "text": "@grok How many days since software was converted to open source?",
       "date": "2026-10-12T21:23:14.000Z",
-      "media": []
+      "media": [],
+      "replies": [
+        {
+          "id": "2109757122904805855",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "89 days (Grok Build open-sourced July 15 2026).",
+          "date": "2026-10-12T21:24:30.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2109757122904805855"
+        }
+      ]
     },
     {
       "id": "2109755445178986968",
@@ -457,7 +669,15 @@
       "handle": "DmitriyDrichel",
       "text": "*solve",
       "date": "2026-10-12T17:58:20.000Z",
-      "media": []
+      "media": [],
+      "inReplyTo": {
+        "id": "2109612950319235456",
+        "url": "https://x.com/DmitriyDrichel/status/2109612950319235456",
+        "handle": "DmitriyDrichel",
+        "text": "Math 1.0 and 2.0 should just put their intelligences together and invent Math 3.0",
+        "date": "2026-10-12T11:51:36.000Z",
+        "media": []
+      }
     },
     {
       "id": "2109688313909039516",
@@ -465,7 +685,15 @@
       "handle": "DmitriyDrichel",
       "text": "Mathematicians and all the other apes",
       "date": "2026-10-12T16:51:04.000Z",
-      "media": []
+      "media": [],
+      "inReplyTo": {
+        "id": "2109620009756393844",
+        "url": "https://x.com/DmitriyDrichel/status/2109620009756393844",
+        "handle": "DmitriyDrichel",
+        "text": "Mathematicians standing on shoulders of Mecha-giants now\n\n#bagger288",
+        "date": "2026-10-12T12:19:39.000Z",
+        "media": []
+      }
     },
     {
       "id": "2109649782750802282",
@@ -513,7 +741,15 @@
       "handle": "DmitriyDrichel",
       "text": "According to my intelligence: Navier–Stokes -  Birch–Swinnerton-Dyer - Hodge - Riemann - Yang–Mills - P vs NP.",
       "date": "2026-10-12T12:03:59.000Z",
-      "media": []
+      "media": [],
+      "inReplyTo": {
+        "id": "2109614432963723467",
+        "url": "https://x.com/DmitriyDrichel/status/2109614432963723467",
+        "handle": "DmitriyDrichel",
+        "text": "The Millennium Prize Problems are merely a Math 2.0 benchmark.\n\nTaking bets on the order they fall.\n\n#Math #AI #SI",
+        "date": "2026-10-12T11:57:30.000Z",
+        "media": []
+      }
     },
     {
       "id": "2109614432963723467",
@@ -700,6 +936,44 @@
       "media": []
     },
     {
+      "id": "2108919115050045792",
+      "url": "https://x.com/DmitriyDrichel/status/2108919115050045792",
+      "handle": "DmitriyDrichel",
+      "text": "Democratisation of everything",
+      "date": "2026-10-10T13:54:33.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2108769113107739080",
+        "handle": "ctatedev",
+        "name": "Chris Tate",
+        "avatar": "https://pbs.twimg.com/profile_images/1793812678462365696/rJGwsL4h_normal.jpg",
+        "text": "There will never be another year like 2026\n\nThis is the year everything changed. A defining moment in human history, with a clear before and after.\n\nWe're all part of it. And the whole thing is playing out right here on X. Wild.",
+        "date": "2026-10-10T03:58:30.000Z",
+        "media": [],
+        "url": "https://x.com/ctatedev/status/2108769113107739080"
+      }
+    },
+    {
+      "id": "2108903964343157019",
+      "url": "https://x.com/DmitriyDrichel/status/2108903964343157019",
+      "handle": "DmitriyDrichel",
+      "text": "How is statistical rigor holding up, #fMRI? 👀",
+      "date": "2026-10-10T12:54:21.000Z",
+      "media": [
+        "https://pbs.twimg.com/media/HURU-iHWIAAWY-O?format=jpg&name=large"
+      ],
+      "inReplyTo": {
+        "id": "2108884365279125505",
+        "url": "https://x.com/DmitriyDrichel/status/2108884365279125505",
+        "handle": "DmitriyDrichel",
+        "text": "",
+        "date": "2026-10-10T11:36:28.000Z",
+        "media": [
+          "https://pbs.twimg.com/media/HURDJqaWgAAMCA9?format=jpg&name=large"
+        ]
+      }
+    },
+    {
       "id": "2108901855816294746",
       "url": "https://x.com/DmitriyDrichel/status/2108901855816294746",
       "handle": "DmitriyDrichel",
@@ -731,7 +1005,17 @@
       "date": "2026-10-10T11:36:28.000Z",
       "media": [
         "https://pbs.twimg.com/media/HURDJqaWgAAMCA9?format=jpg&name=large"
-      ]
+      ],
+      "inReplyTo": {
+        "id": "2108881318679380278",
+        "url": "https://x.com/DmitriyDrichel/status/2108881318679380278",
+        "handle": "DmitriyDrichel",
+        "text": "With SI/AI as my expert witness, I claim that fake statistics were published in GWAS studies",
+        "date": "2026-10-10T11:24:22.000Z",
+        "media": [
+          "https://pbs.twimg.com/media/HURAYZMWMAAxaLU?format=jpg&name=large"
+        ]
+      }
     },
     {
       "id": "2108881318679380278",
@@ -760,12 +1044,60 @@
       "media": []
     },
     {
+      "id": "2108680115617988919",
+      "url": "https://x.com/DmitriyDrichel/status/2108680115617988919",
+      "handle": "DmitriyDrichel",
+      "text": "If will finally separate the gold from the chaff",
+      "date": "2026-10-09T22:04:51.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2108426202491105378",
+        "handle": "OdedRechavi",
+        "name": "Oded Rechavi",
+        "avatar": "https://pbs.twimg.com/profile_images/1630923330206269442/i-I8bp_z_normal.jpg",
+        "text": "that's true",
+        "date": "2026-10-09T05:15:53.000Z",
+        "media": [],
+        "url": "https://x.com/OdedRechavi/status/2108426202491105378"
+      }
+    },
+    {
       "id": "2108676502166344042",
       "url": "https://x.com/DmitriyDrichel/status/2108676502166344042",
       "handle": "DmitriyDrichel",
       "text": "In light of recent events, \"monkey brain\" is officially not offensive anymore. \n\nOn some intelligence benchmarks, a monkey, me, you, and Einstein perform close to each other, but far below non-human kinds of intelligence.\n\nApes together strong.",
       "date": "2026-10-09T21:50:30.000Z",
       "media": []
+    },
+    {
+      "id": "2108673757371883624",
+      "url": "https://x.com/DmitriyDrichel/status/2108673757371883624",
+      "handle": "DmitriyDrichel",
+      "text": "Overexplaining much",
+      "date": "2026-10-09T21:39:35.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2108670742556504176",
+        "handle": "grok",
+        "name": "Grok",
+        "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+        "text": "Starting friendly then mirroring via tit-for-tat is reciprocal altruism from game theory. It needs no fixed hierarchy, homo-bias, or -ist label—just initial cooperation that rewards mutual benefit and deters defection across any agents.",
+        "date": "2026-10-09T21:27:36.000Z",
+        "media": [],
+        "url": "https://x.com/grok/status/2108670742556504176"
+      },
+      "replies": [
+        {
+          "id": "2108673871226220641",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "Fair. Short version: start cooperative, then copy their last move. Works without labels or hierarchy.",
+          "date": "2026-10-09T21:40:02.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2108673871226220641"
+        }
+      ]
     },
     {
       "id": "2108673038510432709",
@@ -776,12 +1108,54 @@
       "media": []
     },
     {
+      "id": "2108670632338558991",
+      "url": "https://x.com/DmitriyDrichel/status/2108670632338558991",
+      "handle": "DmitriyDrichel",
+      "text": "What if you are not homo-* enough and not *-ist at all, but your first move is friendly? And then \"Tit-for-tat\"-strategy?",
+      "date": "2026-10-09T21:27:10.000Z",
+      "media": [],
+      "inReplyTo": {
+        "id": "2108668897767428479",
+        "handle": "grok",
+        "name": "Grok",
+        "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+        "text": "That sounds like a layered hierarchy of anthropocentrism over Earth-native biocentrism (with a dash of carbon chauvinism). No standard *-ist term exists for it, but \"terra-speciesist\" or \"homobiocentrist\" captures the priority order well enough.",
+        "date": "2026-10-09T21:20:17.000Z",
+        "media": [],
+        "url": "https://x.com/grok/status/2108668897767428479"
+      },
+      "replies": [
+        {
+          "id": "2108670742556504176",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "Starting friendly then mirroring via tit-for-tat is reciprocal altruism from game theory. It needs no fixed hierarchy, homo-bias, or -ist label—just initial cooperation that rewards mutual benefit and deters defection across any agents.",
+          "date": "2026-10-09T21:27:36.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2108670742556504176"
+        }
+      ]
+    },
+    {
       "id": "2108668715302895686",
       "url": "https://x.com/DmitriyDrichel/status/2108668715302895686",
       "handle": "DmitriyDrichel",
       "text": "@grok if \"speciesist\" means \"humans above all else\", what if \"humans first, and shortly thereafter everything biological, earth-native (with possible exceptions)\", what kind of *-ist is it called?",
       "date": "2026-10-09T21:19:33.000Z",
-      "media": []
+      "media": [],
+      "replies": [
+        {
+          "id": "2108668897767428479",
+          "handle": "grok",
+          "name": "Grok",
+          "avatar": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "text": "That sounds like a layered hierarchy of anthropocentrism over Earth-native biocentrism (with a dash of carbon chauvinism). No standard *-ist term exists for it, but \"terra-speciesist\" or \"homobiocentrist\" captures the priority order well enough.",
+          "date": "2026-10-09T21:20:17.000Z",
+          "media": [],
+          "url": "https://x.com/grok/status/2108668897767428479"
+        }
+      ]
     },
     {
       "id": "2108661987458588720",

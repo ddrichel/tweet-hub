@@ -31,22 +31,41 @@ function avatarHtml(profile, letter, cls = 'avatar') {
   return src ? `<img class="${cls}" src="${escapeHtml(src)}" alt="">` : `<div class="${cls}">${escapeHtml(letter)}</div>`;
 }
 
-function renderTweet(t, profile = {}) {
+// One post card. `author` overrides the profile for posts by other accounts (e.g. a reply from @grok).
+function postCard(t, profile, opts = {}) {
   const el = document.createElement('article');
-  el.className = 'tweet';
-  const name = profile.name || t.name || '';
+  el.className = 'tweet' + (opts.cls ? ' ' + opts.cls : '');
+  const other = t.handle && profile.handle && t.handle.toLowerCase() !== profile.handle.toLowerCase();
+  const name = other ? (t.name || t.handle) : (profile.name || t.name || '');
   const handle = t.handle || profile.handle || '';
+  const avatar = other
+    ? (t.avatar ? `<img class="avatar" src="${escapeHtml(t.avatar)}" alt="">` : `<div class="avatar">${escapeHtml((name || '?')[0])}</div>`)
+    : avatarHtml(profile, (name || handle || '?')[0]);
   const media = (t.media || []).filter(u => /^https:\/\//.test(u)).slice(0, 4);
   el.innerHTML = `
-    ${avatarHtml(profile, (name || handle || '?')[0])}
+    <div class="side">${avatar}${opts.line ? '<div class="line"></div>' : ''}</div>
     <div class="body">
       <div class="meta">
         <b>${escapeHtml(name)}</b>
         <span class="muted">${handle ? '@' + escapeHtml(handle) : ''} · ${escapeHtml(formatDate(t.date))}</span>
       </div>
-      <div class="text">${linkify(t.text || '')}</div>
+      ${opts.replyingTo ? `<div class="muted small">Replying to <a href="https://x.com/${escapeHtml(opts.replyingTo)}" target="_blank" rel="noopener">@${escapeHtml(opts.replyingTo)}</a></div>` : ''}
+      ${t.text ? `<div class="text">${linkify(t.text)}</div>` : ''}
       ${media.length ? `<div class="media n${media.length}">${media.map(u => `<img src="${escapeHtml(u)}" loading="lazy" alt="">`).join('')}</div>` : ''}
       ${t.url ? `<div class="actions"><a href="${escapeHtml(t.url)}" target="_blank" rel="noopener">View on X ↗</a></div>` : ''}
     </div>`;
   return el;
+}
+
+// A post with its context: the post it replies to above, answers (e.g. from @grok) below.
+function renderTweet(t, profile = {}) {
+  const parent = t.inReplyTo;
+  const replies = t.replies || [];
+  if (!parent && !replies.length) return postCard(t, profile);
+  const wrap = document.createElement('div');
+  wrap.className = 'thread';
+  if (parent) wrap.appendChild(postCard(parent, profile, { cls: 'context', line: true }));
+  wrap.appendChild(postCard(t, profile, { cls: 'main', line: replies.length > 0, replyingTo: parent && parent.handle }));
+  replies.forEach((r, i) => wrap.appendChild(postCard(r, profile, { cls: 'answer', line: i < replies.length - 1, replyingTo: t.handle || profile.handle })));
+  return wrap;
 }
