@@ -1,4 +1,4 @@
-// Renders one tweet in an X-like card. Shared by index.html and add.html (preview).
+// Renders one post as an X-style card. Shared by index.html and add.html (preview).
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
@@ -14,13 +14,13 @@ function formatDate(iso) {
   const d = new Date(iso);
   if (isNaN(d)) return '';
   const diff = (Date.now() - d) / 1000;
-  if (diff < 60) return 'jetzt';
-  if (diff < 3600) return Math.floor(diff / 60) + ' Min.';
-  if (diff < 86400) return Math.floor(diff / 3600) + ' Std.';
-  return d.toLocaleDateString('de-DE', { day: 'numeric', month: 'short', year: d.getFullYear() === new Date().getFullYear() ? undefined : 'numeric' });
+  if (diff < 60) return 'now';
+  if (diff < 3600) return Math.floor(diff / 60) + 'm';
+  if (diff < 86400) return Math.floor(diff / 3600) + 'h';
+  return d.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: d.getFullYear() === new Date().getFullYear() ? undefined : 'numeric' });
 }
 
-// Profilbild: profile.avatar oder automatisch das GitHub-Bild des Repo-Besitzers (owner.github.io).
+// Avatar: profile.avatar, or the GitHub picture of the repo owner (owner.github.io).
 function avatarUrl(profile = {}) {
   if (profile.avatar) return profile.avatar;
   const m = location.hostname.match(/^([^.]+)\.github\.io$/);
@@ -46,7 +46,7 @@ function renderTweet(t, profile = {}) {
       </div>
       <div class="text">${linkify(t.text || '')}</div>
       ${media.length ? `<div class="media n${media.length}">${media.map(u => `<img src="${escapeHtml(u)}" loading="lazy" alt="">`).join('')}</div>` : ''}
-      ${t.url ? `<div class="actions"><a href="${escapeHtml(t.url)}" target="_blank" rel="noopener">Auf X ansehen ↗</a></div>` : ''}
+      ${t.url ? `<div class="actions"><a href="${escapeHtml(t.url)}" target="_blank" rel="noopener">View on X ↗</a></div>` : ''}
     </div>`;
   return el;
 }

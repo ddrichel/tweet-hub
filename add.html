@@ -1,48 +1,48 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tweet übernehmen · Tweet Hub</title>
+<title>Add post · Tweet Hub</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="col">
-  <div class="panel"><a href="./">← Zur Timeline</a></div>
+  <div class="panel"><a href="./">← Timeline</a></div>
 
   <section class="panel">
-    <h2>Tweet übernehmen</h2>
-    <p class="small muted">In der X-App beim Tweet: <b>Teilen → Link kopieren</b>. Dann hier:</p>
-    <p><button class="btn" id="paste">📋 Link einfügen und speichern</button></p>
-    <label for="url">Link zum Tweet</label>
-    <input id="url" inputmode="url" placeholder="https://x.com/deinname/status/…">
+    <h2>Add a post</h2>
+    <p class="small muted">In the X app: <b>Share → Copy link</b>. Then:</p>
+    <p><button class="btn" id="paste">📋 Paste link and save</button></p>
+    <label for="url">Post link</label>
+    <input id="url" inputmode="url" placeholder="https://x.com/yourname/status/…">
     <details>
-      <summary class="small muted">Text selbst eingeben (optional)</summary>
-      <textarea id="text" placeholder="Leer lassen, dann wird der Text automatisch geholt."></textarea>
+      <summary class="small muted">Enter text manually (optional)</summary>
+      <textarea id="text" placeholder="Leave empty to fetch the text automatically."></textarea>
       <div id="preview"></div>
     </details>
-    <p><button class="btn ghost" id="save">Bei GitHub speichern</button></p>
-    <p class="small muted">Öffnet GitHub mit allem ausgefüllt. Du tippst nur <b>Submit</b>, nach etwa einer Minute steht der Tweet in der Timeline.</p>
+    <p><button class="btn ghost" id="save">Save via GitHub</button></p>
+    <p class="small muted">Opens a prefilled GitHub issue. Tap <b>Submit</b>; the post appears in the timeline about a minute later.</p>
   </section>
 
   <section class="panel">
-    <h2>Am Computer: Bookmarklet</h2>
-    <p class="small muted">Diesen Button in die Lesezeichenleiste ziehen. Auf x.com beim Tweet anklicken, dann Submit.</p>
+    <h2>Desktop: bookmarklet</h2>
+    <p class="small muted">Drag this button to your bookmarks bar. Click it on a post on x.com, then Submit.</p>
     <a class="bookmarklet" id="bm" href="#">→ Tweet Hub</a>
   </section>
 
   <section class="panel" id="repoPanel" hidden>
     <h2>Repository</h2>
-    <p class="small muted">Konnte nicht automatisch erkannt werden (z. B. bei eigener Domain).</p>
-    <input id="repo" placeholder="besitzer/tweet-hub">
+    <p class="small muted">Could not be detected automatically (e.g. custom domain).</p>
+    <input id="repo" placeholder="owner/tweet-hub">
   </section>
 </main>
 <script src="render.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 
-// Repo aus der GitHub-Pages-Adresse ableiten (owner.github.io/repo), damit Forks ohne Anpassung laufen.
+// Derive the repo from the GitHub Pages address (owner.github.io/repo) so forks work unchanged.
 function detectRepo() {
   const m = location.hostname.match(/^([^.]+)\.github\.io$/);
   const first = location.pathname.split('/').filter(Boolean)[0];
@@ -79,8 +79,8 @@ $('text').oninput = showPreview;
 
 function submit() {
   const t = currentTweet();
-  if (!t.text.trim() && !t.id) { alert('Bitte den Link zum Tweet einfügen.'); return; }
-  if (!repo()) { alert('Bitte Repository angeben.'); return; }
+  if (!t.text.trim() && !t.id) { alert('Please paste the post link.'); return; }
+  if (!repo()) { alert('Please enter the repository.'); return; }
   location.href = issueUrl(repo(), t);
 }
 $('save').onclick = submit;
@@ -91,15 +91,15 @@ $('paste').onclick = async () => {
     if (m) { $('url').value = m[0]; submit(); return; }
     if (clip) $('text').value = clip;
   } catch {}
-  alert('Kein Tweet-Link in der Zwischenablage. Bitte unten ins Feld einfügen.');
+  alert('No post link in the clipboard. Please paste it into the field below.');
   $('url').focus();
 };
 
-// Bookmarklet: liest den Tweet auf x.com aus und öffnet direkt das vorausgefüllte GitHub-Issue.
+// Bookmarklet: reads the post on x.com and opens the prefilled GitHub issue.
 function buildBookmarklet(r) {
   const code = `(()=>{const R=${JSON.stringify(r)};
 const arts=[...document.querySelectorAll('article[data-testid="tweet"]')];
-if(!arts.length){alert('Tweet Hub: Kein Tweet auf dieser Seite gefunden.');return}
+if(!arts.length){alert('Tweet Hub: no post found on this page.');return}
 const sid=(location.pathname.match(/\\/status\\/(\\d+)/)||[])[1];
 const link=a=>{const t=a.querySelector('time');return t&&t.closest('a')};
 let art=sid?arts.find(a=>{const l=link(a);return l&&l.href.includes(sid)}):arts.find(a=>!a.querySelector('[data-testid="socialContext"]'));
@@ -120,7 +120,7 @@ window.open('https://github.com/'+R+'/issues/new?title='+encodeURIComponent(titl
 function updateBookmarklet() { $('bm').href = buildBookmarklet(repo()); }
 $('repo').oninput = updateBookmarklet;
 updateBookmarklet();
-$('bm').onclick = e => { e.preventDefault(); alert('In die Lesezeichenleiste ziehen, nicht klicken.'); };
+$('bm').onclick = e => { e.preventDefault(); alert('Drag this to your bookmarks bar instead of clicking it.'); };
 </script>
 </body>
 </html>

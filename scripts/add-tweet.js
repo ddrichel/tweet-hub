@@ -1,5 +1,5 @@
-// Liest den Tweet (JSON im ```json-Block des Issues) und trägt ihn vorne in tweets.json ein.
-// Fehlt der Text (z. B. nur Link vom Handy), wird er über X' oEmbed-Schnittstelle geholt.
+// Reads the post (JSON in the issue's ```json block) and prepends it to tweets.json.
+// If the text is missing (e.g. only a link from mobile), it is fetched via X's oEmbed endpoint.
 const fs = require('fs');
 
 const decode = s => s
@@ -10,7 +10,7 @@ const decode = s => s
   .replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&mdash;/g, '—')
   .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n));
 
-// Tweet-ID → Zeitpunkt (Snowflake)
+// Post ID → timestamp (snowflake)
 const idToDate = id => { try { return new Date(Number((BigInt(id) >> 22n) + 1288834974657n)).toISOString(); } catch { return ''; } };
 
 async function fromOembed(url) {
@@ -43,14 +43,14 @@ async function fromOembed(url) {
     date,
     media: (t.media || []).filter(u => /^https:\/\/pbs\.twimg\.com\//.test(u)).slice(0, 4)
   };
-  if (!tweet.text.trim()) { console.error('Kein Tweet-Text gefunden.'); process.exit(1); }
+  if (!tweet.text.trim()) { console.error('No post text found.'); process.exit(1); }
 
   const data = JSON.parse(fs.readFileSync('tweets.json', 'utf8'));
   data.tweets = data.tweets || [];
   if (data.tweets.some(x => (tweet.id && x.id === tweet.id) || (!tweet.id && x.text === tweet.text))) {
-    console.log('Schon vorhanden.'); return;
+    console.log('Already present.'); return;
   }
   data.tweets.unshift(tweet);
   fs.writeFileSync('tweets.json', JSON.stringify(data, null, 2) + '\n');
-  console.log('Übernommen:', tweet.text.slice(0, 60));
+  console.log('Added:', tweet.text.slice(0, 60));
 })().catch(e => { console.error(e.message); process.exit(1); });

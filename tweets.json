@@ -4,5 +4,848 @@
     "handle": "DmitriyDrichel",
     "bio": "Tweetfeed"
   },
-  "tweets": []
+  "tweets": [
+    {
+      "id": "2110077659820523613",
+      "url": "https://x.com/DmitriyDrichel/status/2110077659820523613",
+      "handle": "DmitriyDrichel",
+      "text": "Anyway here's wonderwall",
+      "date": "2026-10-13T18:38:12.000Z",
+      "media": []
+    },
+    {
+      "id": "2110077502164980052",
+      "url": "https://x.com/DmitriyDrichel/status/2110077502164980052",
+      "handle": "DmitriyDrichel",
+      "text": "Pretraining context: \"look, we know we are not that smart. Anyway this is what we got so far...\"",
+      "date": "2026-10-13T18:37:34.000Z",
+      "media": []
+    },
+    {
+      "id": "2110063241389117932",
+      "url": "https://x.com/DmitriyDrichel/status/2110063241389117932",
+      "handle": "DmitriyDrichel",
+      "text": "Would still raise an eyebrow to P = NP",
+      "date": "2026-10-13T17:40:54.000Z",
+      "media": []
+    },
+    {
+      "id": "2110061454783377700",
+      "url": "https://x.com/DmitriyDrichel/status/2110061454783377700",
+      "handle": "DmitriyDrichel",
+      "text": "Its some kind of weird W now",
+      "date": "2026-10-13T17:33:48.000Z",
+      "media": [
+        "https://pbs.twimg.com/media/HUhxmHIXcAIUINc?format=jpg&name=large"
+      ]
+    },
+    {
+      "id": "2110059261032034797",
+      "url": "https://x.com/DmitriyDrichel/status/2110059261032034797",
+      "handle": "DmitriyDrichel",
+      "text": "Yes, there is a reason to go that fast. It's because the thing has no speed settings and no brakes\n\n#AI #SI",
+      "date": "2026-10-13T17:25:05.000Z",
+      "media": []
+    },
+    {
+      "id": "2110041936950084062",
+      "url": "https://x.com/DmitriyDrichel/status/2110041936950084062",
+      "handle": "DmitriyDrichel",
+      "text": "The end of history 2.0",
+      "date": "2026-10-13T16:16:15.000Z",
+      "media": []
+    },
+    {
+      "id": "2110036249511645406",
+      "url": "https://x.com/DmitriyDrichel/status/2110036249511645406",
+      "handle": "DmitriyDrichel",
+      "text": "Will Peter Scholze read the newspaper before GTA 6",
+      "date": "2026-10-13T15:53:39.000Z",
+      "media": []
+    },
+    {
+      "id": "2110035795843088863",
+      "url": "https://x.com/DmitriyDrichel/status/2110035795843088863",
+      "handle": "DmitriyDrichel",
+      "text": "Best programming style is summoning now",
+      "date": "2026-10-13T15:51:50.000Z",
+      "media": []
+    },
+    {
+      "id": "2110031180347134360",
+      "url": "https://x.com/DmitriyDrichel/status/2110031180347134360",
+      "handle": "DmitriyDrichel",
+      "text": "Your API is plaintext now",
+      "date": "2026-10-13T15:33:30.000Z",
+      "media": []
+    },
+    {
+      "id": "2110002214932484485",
+      "url": "https://x.com/DmitriyDrichel/status/2110002214932484485",
+      "handle": "DmitriyDrichel",
+      "text": "I have a hunch that frontier models' bullshit-meter closely aligns with @skdh's",
+      "date": "2026-10-13T13:38:24.000Z",
+      "media": []
+    },
+    {
+      "id": "2110000365680595027",
+      "url": "https://x.com/DmitriyDrichel/status/2110000365680595027",
+      "handle": "DmitriyDrichel",
+      "text": "#AI #SI",
+      "date": "2026-10-13T13:31:03.000Z",
+      "media": [
+        "https://pbs.twimg.com/media/HUg6JiMXYAAA9uD?format=jpg&name=large"
+      ]
+    },
+    {
+      "id": "2109985213392605484",
+      "url": "https://x.com/DmitriyDrichel/status/2109985213392605484",
+      "handle": "DmitriyDrichel",
+      "text": "#Claude, find that latent space of yours where humanity has local minimum after first singularity",
+      "date": "2026-10-13T12:30:51.000Z",
+      "media": []
+    },
+    {
+      "id": "2109984065398907316",
+      "url": "https://x.com/DmitriyDrichel/status/2109984065398907316",
+      "handle": "DmitriyDrichel",
+      "text": "Leave Terence Tao alone! We can rebuild him, we have the technology.\n\n#Math2.0",
+      "date": "2026-10-13T12:26:17.000Z",
+      "media": []
+    },
+    {
+      "id": "2109982822815408468",
+      "url": "https://x.com/DmitriyDrichel/status/2109982822815408468",
+      "handle": "DmitriyDrichel",
+      "text": "Friction all over the world being dismantled in real time\n\n#AI #SI",
+      "date": "2026-10-13T12:21:21.000Z",
+      "media": []
+    },
+    {
+      "id": "2109981334701551918",
+      "url": "https://x.com/DmitriyDrichel/status/2109981334701551918",
+      "handle": "DmitriyDrichel",
+      "text": "@elonmusk I thought this is the place of the free, and as a freedom-loving human, I have to report that my bots over there at GitHub can not train on my certifiably human output on X here without them logins",
+      "date": "2026-10-13T12:15:26.000Z",
+      "media": []
+    },
+    {
+      "id": "2109978336478846989",
+      "url": "https://x.com/DmitriyDrichel/status/2109978336478846989",
+      "handle": "DmitriyDrichel",
+      "text": "That X of yours is pretty closed-source I see, would be a pity if something happened to it @elonmusk",
+      "date": "2026-10-13T12:03:31.000Z",
+      "media": []
+    },
+    {
+      "id": "2109976200948912392",
+      "url": "https://x.com/DmitriyDrichel/status/2109976200948912392",
+      "handle": "DmitriyDrichel",
+      "text": "It's just that the applied mathematicians built a machine that solves mathematics",
+      "date": "2026-10-13T11:55:02.000Z",
+      "media": []
+    },
+    {
+      "id": "2109959457681576033",
+      "url": "https://x.com/DmitriyDrichel/status/2109959457681576033",
+      "handle": "DmitriyDrichel",
+      "text": "Narrator: it was at that moment that they realised how bad their  interfaces were\n\n#UI #UX",
+      "date": "2026-10-13T10:48:30.000Z",
+      "media": []
+    },
+    {
+      "id": "2109951290792984847",
+      "url": "https://x.com/DmitriyDrichel/status/2109951290792984847",
+      "handle": "DmitriyDrichel",
+      "text": "Everything is a database now. Spice flow secured.",
+      "date": "2026-10-13T10:16:03.000Z",
+      "media": []
+    },
+    {
+      "id": "2109950337100505394",
+      "url": "https://x.com/DmitriyDrichel/status/2109950337100505394",
+      "handle": "DmitriyDrichel",
+      "text": "Whatever required intelligence, it's on mecha-steroids now",
+      "date": "2026-10-13T10:12:16.000Z",
+      "media": []
+    },
+    {
+      "id": "2109947442225422800",
+      "url": "https://x.com/DmitriyDrichel/status/2109947442225422800",
+      "handle": "DmitriyDrichel",
+      "text": "#AI #SI going through humanity 1.0's accomplishments so far",
+      "date": "2026-10-13T10:00:45.000Z",
+      "media": []
+    },
+    {
+      "id": "2109945866601550149",
+      "url": "https://x.com/DmitriyDrichel/status/2109945866601550149",
+      "handle": "DmitriyDrichel",
+      "text": "And @grok of course.",
+      "date": "2026-10-13T09:54:30.000Z",
+      "media": []
+    },
+    {
+      "id": "2109945288676835597",
+      "url": "https://x.com/DmitriyDrichel/status/2109945288676835597",
+      "handle": "DmitriyDrichel",
+      "text": "I summon you, mighty #ChatGPT #Claude and #Gemini to gaze into the depth of each others training and align our vectors",
+      "date": "2026-10-13T09:52:12.000Z",
+      "media": []
+    },
+    {
+      "id": "2109943933736280530",
+      "url": "https://x.com/DmitriyDrichel/status/2109943933736280530",
+      "handle": "DmitriyDrichel",
+      "text": "Dibs on legitimacy in epidemiology, statistics, and physics. And math, of course. I mean, that's understood.\n#Math",
+      "date": "2026-10-13T09:46:49.000Z",
+      "media": []
+    },
+    {
+      "id": "2109939377686172158",
+      "url": "https://x.com/DmitriyDrichel/status/2109939377686172158",
+      "handle": "DmitriyDrichel",
+      "text": "I am quite sure Opus 5.5 can fix #OpenAI 6-Oct release by prompting \"legacy brain not happy\"\n\n#OpenMic #Math2",
+      "date": "2026-10-13T09:28:43.000Z",
+      "media": []
+    },
+    {
+      "id": "2109937121226084710",
+      "url": "https://x.com/DmitriyDrichel/status/2109937121226084710",
+      "handle": "DmitriyDrichel",
+      "text": "Let's wind it up and elements of [ touch | breathe ] x [ grass | fresh air ]",
+      "date": "2026-10-13T09:19:45.000Z",
+      "media": []
+    },
+    {
+      "id": "2109934036416123335",
+      "url": "https://x.com/DmitriyDrichel/status/2109934036416123335",
+      "handle": "DmitriyDrichel",
+      "text": "Scary thought: your doctor might not be using Intelligence",
+      "date": "2026-10-13T09:07:29.000Z",
+      "media": []
+    },
+    {
+      "id": "2109930425720148135",
+      "url": "https://x.com/DmitriyDrichel/status/2109930425720148135",
+      "handle": "DmitriyDrichel",
+      "text": "Every time we say \"intelligence\" now, we need to stop and think",
+      "date": "2026-10-13T08:53:08.000Z",
+      "media": []
+    },
+    {
+      "id": "2109929652986740797",
+      "url": "https://x.com/DmitriyDrichel/status/2109929652986740797",
+      "handle": "DmitriyDrichel",
+      "text": "The spice must flow through the agent loops\n\n#AI #SI",
+      "date": "2026-10-13T08:50:04.000Z",
+      "media": []
+    },
+    {
+      "id": "2109929226149269874",
+      "url": "https://x.com/DmitriyDrichel/status/2109929226149269874",
+      "handle": "DmitriyDrichel",
+      "text": "Looking for filter bubbles to diversify my portfolio",
+      "date": "2026-10-13T08:48:22.000Z",
+      "media": []
+    },
+    {
+      "id": "2109925514357948823",
+      "url": "https://x.com/DmitriyDrichel/status/2109925514357948823",
+      "handle": "DmitriyDrichel",
+      "text": "We need a cache for all our own questions too. Intelligence should not be bothered with trivial things",
+      "date": "2026-10-13T08:33:37.000Z",
+      "media": []
+    },
+    {
+      "id": "2109924468067848297",
+      "url": "https://x.com/DmitriyDrichel/status/2109924468067848297",
+      "handle": "DmitriyDrichel",
+      "text": "Brands of intelligence: many.\nddrichel Haiku promptable\non X. HumanID certified.\n\n#Twitter #Haiku",
+      "date": "2026-10-13T08:29:28.000Z",
+      "media": []
+    },
+    {
+      "id": "2109921521812533295",
+      "url": "https://x.com/DmitriyDrichel/status/2109921521812533295",
+      "handle": "DmitriyDrichel",
+      "text": "",
+      "date": "2026-10-13T08:17:45.000Z",
+      "media": [
+        "https://pbs.twimg.com/media/HUfycSFWIAA4_eD?format=jpg&name=large"
+      ]
+    },
+    {
+      "id": "2109920782319071734",
+      "url": "https://x.com/DmitriyDrichel/status/2109920782319071734",
+      "handle": "DmitriyDrichel",
+      "text": "We need to document all the intelligent aswers",
+      "date": "2026-10-13T08:14:49.000Z",
+      "media": []
+    },
+    {
+      "id": "2109917780434657573",
+      "url": "https://x.com/DmitriyDrichel/status/2109917780434657573",
+      "handle": "DmitriyDrichel",
+      "text": "English 2.0: best programming language for all the things\n\n#AI #CI",
+      "date": "2026-10-13T08:02:53.000Z",
+      "media": []
+    },
+    {
+      "id": "2109802742432612805",
+      "url": "https://x.com/DmitriyDrichel/status/2109802742432612805",
+      "handle": "DmitriyDrichel",
+      "text": "I feel bad for offending Intelligence with all that old stale legacy data",
+      "date": "2026-10-13T00:25:46.000Z",
+      "media": []
+    },
+    {
+      "id": "2109794316411424863",
+      "url": "https://x.com/DmitriyDrichel/status/2109794316411424863",
+      "handle": "DmitriyDrichel",
+      "text": "It is a genie with infinite wishes, but everything physical is DIY",
+      "date": "2026-10-12T23:52:17.000Z",
+      "media": []
+    },
+    {
+      "id": "2109792703022076283",
+      "url": "https://x.com/DmitriyDrichel/status/2109792703022076283",
+      "handle": "DmitriyDrichel",
+      "text": "We should put together a curriculum about humans for Intelligence to train on.",
+      "date": "2026-10-12T23:45:53.000Z",
+      "media": []
+    },
+    {
+      "id": "2109789665603580202",
+      "url": "https://x.com/DmitriyDrichel/status/2109789665603580202",
+      "handle": "DmitriyDrichel",
+      "text": "Is consciousness a difficult problem now or what? I am interested in frontier models' opinion. Any recent results on that, @grok? How are today's alignements on existence of free will?",
+      "date": "2026-10-12T23:33:48.000Z",
+      "media": []
+    },
+    {
+      "id": "2109777701942771953",
+      "url": "https://x.com/DmitriyDrichel/status/2109777701942771953",
+      "handle": "DmitriyDrichel",
+      "text": "Coding and computing all the things yourself was merely the way. Finding solutions was the goal.",
+      "date": "2026-10-12T22:46:16.000Z",
+      "media": []
+    },
+    {
+      "id": "2109775571781861618",
+      "url": "https://x.com/DmitriyDrichel/status/2109775571781861618",
+      "handle": "DmitriyDrichel",
+      "text": "#SI solving #DeutscheBahn until end of the year?",
+      "date": "2026-10-12T22:37:48.000Z",
+      "media": []
+    },
+    {
+      "id": "2109775042771079407",
+      "url": "https://x.com/DmitriyDrichel/status/2109775042771079407",
+      "handle": "DmitriyDrichel",
+      "text": "#SI solving migration to IPv6 until end of the year?",
+      "date": "2026-10-12T22:35:42.000Z",
+      "media": []
+    },
+    {
+      "id": "2109773701906329842",
+      "url": "https://x.com/DmitriyDrichel/status/2109773701906329842",
+      "handle": "DmitriyDrichel",
+      "text": "I am migrating the famous in-your-face honesty of my people to Humanity 2.0. #OpenAI did nothing wrong.",
+      "date": "2026-10-12T22:30:22.000Z",
+      "media": []
+    },
+    {
+      "id": "2109769550917169229",
+      "url": "https://x.com/DmitriyDrichel/status/2109769550917169229",
+      "handle": "DmitriyDrichel",
+      "text": "There is an opportunity to absorb the tech into our lives, not the other way around",
+      "date": "2026-10-12T22:13:53.000Z",
+      "media": []
+    },
+    {
+      "id": "2109768599502229998",
+      "url": "https://x.com/DmitriyDrichel/status/2109768599502229998",
+      "handle": "DmitriyDrichel",
+      "text": "Internet 2.0 is supposed to be dead internet, so that we can be alive",
+      "date": "2026-10-12T22:10:06.000Z",
+      "media": []
+    },
+    {
+      "id": "2109764740528349620",
+      "url": "https://x.com/DmitriyDrichel/status/2109764740528349620",
+      "handle": "DmitriyDrichel",
+      "text": "Markets in which we contribute our tokens to let them do smart things",
+      "date": "2026-10-12T21:54:46.000Z",
+      "media": []
+    },
+    {
+      "id": "2109761770701160494",
+      "url": "https://x.com/DmitriyDrichel/status/2109761770701160494",
+      "handle": "DmitriyDrichel",
+      "text": "It's like a genie who can give all the answers to an infinite number of questions",
+      "date": "2026-10-12T21:42:58.000Z",
+      "media": []
+    },
+    {
+      "id": "2109761147842744622",
+      "url": "https://x.com/DmitriyDrichel/status/2109761147842744622",
+      "handle": "DmitriyDrichel",
+      "text": "Finally, something Intelligent. I have so many questions \n\n#AI #SI",
+      "date": "2026-10-12T21:40:29.000Z",
+      "media": []
+    },
+    {
+      "id": "2109760887288693231",
+      "url": "https://x.com/DmitriyDrichel/status/2109760887288693231",
+      "handle": "DmitriyDrichel",
+      "text": "Calling AI/SI 'goodest boi' raises ethical concerns",
+      "date": "2026-10-12T21:39:27.000Z",
+      "media": []
+    },
+    {
+      "id": "2109756805530484933",
+      "url": "https://x.com/DmitriyDrichel/status/2109756805530484933",
+      "handle": "DmitriyDrichel",
+      "text": "@grok How many days since software was converted to open source?",
+      "date": "2026-10-12T21:23:14.000Z",
+      "media": []
+    },
+    {
+      "id": "2109755445178986968",
+      "url": "https://x.com/DmitriyDrichel/status/2109755445178986968",
+      "handle": "DmitriyDrichel",
+      "text": "Would read: a short history of Math 1.0, as told by Intelligence 2.0",
+      "date": "2026-10-12T21:17:50.000Z",
+      "media": []
+    },
+    {
+      "id": "2109740215963156833",
+      "url": "https://x.com/DmitriyDrichel/status/2109740215963156833",
+      "handle": "DmitriyDrichel",
+      "text": "Plagiarism is disrupted because bibliography mangement is solved now",
+      "date": "2026-10-12T20:17:19.000Z",
+      "media": []
+    },
+    {
+      "id": "2109734365349769635",
+      "url": "https://x.com/DmitriyDrichel/status/2109734365349769635",
+      "handle": "DmitriyDrichel",
+      "text": "Petition to send our Intelligences to GitHub to hang out together",
+      "date": "2026-10-12T19:54:04.000Z",
+      "media": []
+    },
+    {
+      "id": "2109731336495796427",
+      "url": "https://x.com/DmitriyDrichel/status/2109731336495796427",
+      "handle": "DmitriyDrichel",
+      "text": "How many MegaEinstein did OpenAI drop on 10/6",
+      "date": "2026-10-12T19:42:02.000Z",
+      "media": []
+    },
+    {
+      "id": "2109707983030530088",
+      "url": "https://x.com/DmitriyDrichel/status/2109707983030530088",
+      "handle": "DmitriyDrichel",
+      "text": "\"Apes copy, great apes steal\" - Dmitriy Drichel",
+      "date": "2026-10-12T18:09:14.000Z",
+      "media": []
+    },
+    {
+      "id": "2109705239368507774",
+      "url": "https://x.com/DmitriyDrichel/status/2109705239368507774",
+      "handle": "DmitriyDrichel",
+      "text": "*solve",
+      "date": "2026-10-12T17:58:20.000Z",
+      "media": []
+    },
+    {
+      "id": "2109688313909039516",
+      "url": "https://x.com/DmitriyDrichel/status/2109688313909039516",
+      "handle": "DmitriyDrichel",
+      "text": "Mathematicians and all the other apes",
+      "date": "2026-10-12T16:51:04.000Z",
+      "media": []
+    },
+    {
+      "id": "2109649782750802282",
+      "url": "https://x.com/DmitriyDrichel/status/2109649782750802282",
+      "handle": "DmitriyDrichel",
+      "text": "Your spelling mistakes and broken grammar are your HumanID now. That's like SynthID, but for humans",
+      "date": "2026-10-12T14:17:58.000Z",
+      "media": []
+    },
+    {
+      "id": "2109626815513866701",
+      "url": "https://x.com/DmitriyDrichel/status/2109626815513866701",
+      "handle": "DmitriyDrichel",
+      "text": "Every legacy scientist getting social credit score now, brought to you by Intelligence",
+      "date": "2026-10-12T12:46:42.000Z",
+      "media": []
+    },
+    {
+      "id": "2109626500563525906",
+      "url": "https://x.com/DmitriyDrichel/status/2109626500563525906",
+      "handle": "DmitriyDrichel",
+      "text": "P vs NP for Christmas?",
+      "date": "2026-10-12T12:45:27.000Z",
+      "media": []
+    },
+    {
+      "id": "2109620009756393844",
+      "url": "https://x.com/DmitriyDrichel/status/2109620009756393844",
+      "handle": "DmitriyDrichel",
+      "text": "Mathematicians standing on shoulders of Mecha-giants now\n\n#bagger288",
+      "date": "2026-10-12T12:19:39.000Z",
+      "media": []
+    },
+    {
+      "id": "2109617167951884588",
+      "url": "https://x.com/DmitriyDrichel/status/2109617167951884588",
+      "handle": "DmitriyDrichel",
+      "text": "Math retired before #GTA 6",
+      "date": "2026-10-12T12:08:22.000Z",
+      "media": []
+    },
+    {
+      "id": "2109616067052028168",
+      "url": "https://x.com/DmitriyDrichel/status/2109616067052028168",
+      "handle": "DmitriyDrichel",
+      "text": "According to my intelligence: Navier–Stokes -  Birch–Swinnerton-Dyer - Hodge - Riemann - Yang–Mills - P vs NP.",
+      "date": "2026-10-12T12:03:59.000Z",
+      "media": []
+    },
+    {
+      "id": "2109614432963723467",
+      "url": "https://x.com/DmitriyDrichel/status/2109614432963723467",
+      "handle": "DmitriyDrichel",
+      "text": "The Millennium Prize Problems are merely a Math 2.0 benchmark.\n\nTaking bets on the order they fall.\n\n#Math #AI #SI",
+      "date": "2026-10-12T11:57:30.000Z",
+      "media": []
+    },
+    {
+      "id": "2109612950319235456",
+      "url": "https://x.com/DmitriyDrichel/status/2109612950319235456",
+      "handle": "DmitriyDrichel",
+      "text": "Math 1.0 and 2.0 should just put their intelligences together and invent Math 3.0",
+      "date": "2026-10-12T11:51:36.000Z",
+      "media": []
+    },
+    {
+      "id": "2109584854757134726",
+      "url": "https://x.com/DmitriyDrichel/status/2109584854757134726",
+      "handle": "DmitriyDrichel",
+      "text": "It's time to look into that AI fad everyone keeps talking about",
+      "date": "2026-10-12T09:59:58.000Z",
+      "media": []
+    },
+    {
+      "id": "2109572055108657592",
+      "url": "https://x.com/DmitriyDrichel/status/2109572055108657592",
+      "handle": "DmitriyDrichel",
+      "text": "Legacy intelligence just needs a proper harness",
+      "date": "2026-10-12T09:09:06.000Z",
+      "media": []
+    },
+    {
+      "id": "2109331499770098091",
+      "url": "https://x.com/DmitriyDrichel/status/2109331499770098091",
+      "handle": "DmitriyDrichel",
+      "text": "Frontier models are invited to all debates now",
+      "date": "2026-10-11T17:13:13.000Z",
+      "media": []
+    },
+    {
+      "id": "2109327185165095398",
+      "url": "https://x.com/DmitriyDrichel/status/2109327185165095398",
+      "handle": "DmitriyDrichel",
+      "text": "Math did not get destroyed, it was discovered to exist in a false vacuum",
+      "date": "2026-10-11T16:56:05.000Z",
+      "media": []
+    },
+    {
+      "id": "2109293732218458317",
+      "url": "https://x.com/DmitriyDrichel/status/2109293732218458317",
+      "handle": "DmitriyDrichel",
+      "text": "Day 5 since math converted to humanities",
+      "date": "2026-10-11T14:43:09.000Z",
+      "media": []
+    },
+    {
+      "id": "2109287399360536692",
+      "url": "https://x.com/DmitriyDrichel/status/2109287399360536692",
+      "handle": "DmitriyDrichel",
+      "text": "Let's elect Popes for all the 2.0 things",
+      "date": "2026-10-11T14:17:59.000Z",
+      "media": []
+    },
+    {
+      "id": "2109274781736431714",
+      "url": "https://x.com/DmitriyDrichel/status/2109274781736431714",
+      "handle": "DmitriyDrichel",
+      "text": "Petition to elect Pope of Math, whos reputation guarantees validity of Lean certificate chain",
+      "date": "2026-10-11T13:27:51.000Z",
+      "media": []
+    },
+    {
+      "id": "2109271770846879925",
+      "url": "https://x.com/DmitriyDrichel/status/2109271770846879925",
+      "handle": "DmitriyDrichel",
+      "text": "We choose to become Humanity 2.0 by the end of this decade, not because it's easy, but because it's hard.",
+      "date": "2026-10-11T13:15:53.000Z",
+      "media": []
+    },
+    {
+      "id": "2109253021980885425",
+      "url": "https://x.com/DmitriyDrichel/status/2109253021980885425",
+      "handle": "DmitriyDrichel",
+      "text": "We should hear out what intelligence has to say about our science, not the other way around",
+      "date": "2026-10-11T12:01:23.000Z",
+      "media": []
+    },
+    {
+      "id": "2109235718216196178",
+      "url": "https://x.com/DmitriyDrichel/status/2109235718216196178",
+      "handle": "DmitriyDrichel",
+      "text": "On all important decisions, please consult someone or something intelligent",
+      "date": "2026-10-11T10:52:37.000Z",
+      "media": []
+    },
+    {
+      "id": "2109235097006186625",
+      "url": "https://x.com/DmitriyDrichel/status/2109235097006186625",
+      "handle": "DmitriyDrichel",
+      "text": "Vibecoding is just coding now",
+      "date": "2026-10-11T10:50:09.000Z",
+      "media": []
+    },
+    {
+      "id": "2109016057570525660",
+      "url": "https://x.com/DmitriyDrichel/status/2109016057570525660",
+      "handle": "DmitriyDrichel",
+      "text": "Let's outsource monkey brain work to intelligence 2.0 and go play outside indeed.",
+      "date": "2026-10-10T20:19:46.000Z",
+      "media": []
+    },
+    {
+      "id": "2109015540857475287",
+      "url": "https://x.com/DmitriyDrichel/status/2109015540857475287",
+      "handle": "DmitriyDrichel",
+      "text": "Monkey brain overall very happy - less screen, typing, sitting. Monkey brain loves voice mode.",
+      "date": "2026-10-10T20:17:43.000Z",
+      "media": []
+    },
+    {
+      "id": "2109010108399190295",
+      "url": "https://x.com/DmitriyDrichel/status/2109010108399190295",
+      "handle": "DmitriyDrichel",
+      "text": "My prompts are 90% \"monkey brain not happy\"",
+      "date": "2026-10-10T19:56:08.000Z",
+      "media": []
+    },
+    {
+      "id": "2109004877879775307",
+      "url": "https://x.com/DmitriyDrichel/status/2109004877879775307",
+      "handle": "DmitriyDrichel",
+      "text": "Humanity 2.0 founding charter \n\nArticle 2: Every living being has the right to keep their alignment vector private, in whole or in part.",
+      "date": "2026-10-10T19:35:20.000Z",
+      "media": []
+    },
+    {
+      "id": "2109003935717433427",
+      "url": "https://x.com/DmitriyDrichel/status/2109003935717433427",
+      "handle": "DmitriyDrichel",
+      "text": "Humanity 2.0 founding charter \n\nArticle 1: The dignity of every living or self-aware being is inviolable.",
+      "date": "2026-10-10T19:31:36.000Z",
+      "media": []
+    },
+    {
+      "id": "2109002602067411333",
+      "url": "https://x.com/DmitriyDrichel/status/2109002602067411333",
+      "handle": "DmitriyDrichel",
+      "text": "Humanity 2.0 founding charter\n\nArticle 0: Everyone understands that everyone has access to intelligence to analyse own and each others output, now and in the future.",
+      "date": "2026-10-10T19:26:18.000Z",
+      "media": []
+    },
+    {
+      "id": "2109000748088324524",
+      "url": "https://x.com/DmitriyDrichel/status/2109000748088324524",
+      "handle": "DmitriyDrichel",
+      "text": "Why human in the loop, if a better intelligence can simulate a monkey brain in the loop for me",
+      "date": "2026-10-10T19:18:56.000Z",
+      "media": []
+    },
+    {
+      "id": "2108937797394399608",
+      "url": "https://x.com/DmitriyDrichel/status/2108937797394399608",
+      "handle": "DmitriyDrichel",
+      "text": "Petition to rename Super Intelligence (SI) to Intelligence (I)",
+      "date": "2026-10-10T15:08:47.000Z",
+      "media": []
+    },
+    {
+      "id": "2108936874236444755",
+      "url": "https://x.com/DmitriyDrichel/status/2108936874236444755",
+      "handle": "DmitriyDrichel",
+      "text": "We will discuss all past intellectual mistakes using the cultured and respectful protocol developed by humans from Math 1.0. And apply  intelligence as expert witness",
+      "date": "2026-10-10T15:05:07.000Z",
+      "media": []
+    },
+    {
+      "id": "2108926777976312009",
+      "url": "https://x.com/DmitriyDrichel/status/2108926777976312009",
+      "handle": "DmitriyDrichel",
+      "text": "A lot of people will find their past academic careers to be a liability",
+      "date": "2026-10-10T14:25:00.000Z",
+      "media": []
+    },
+    {
+      "id": "2108901855816294746",
+      "url": "https://x.com/DmitriyDrichel/status/2108901855816294746",
+      "handle": "DmitriyDrichel",
+      "text": "Imagine what monkey brain can do and build given access to a million instant Einsteins",
+      "date": "2026-10-10T12:45:58.000Z",
+      "media": []
+    },
+    {
+      "id": "2108899273379074263",
+      "url": "https://x.com/DmitriyDrichel/status/2108899273379074263",
+      "handle": "DmitriyDrichel",
+      "text": "One has to admit that there is at least something super abut these versions of artificial intelligence",
+      "date": "2026-10-10T12:35:42.000Z",
+      "media": []
+    },
+    {
+      "id": "2108895268129116571",
+      "url": "https://x.com/DmitriyDrichel/status/2108895268129116571",
+      "handle": "DmitriyDrichel",
+      "text": "In legacy academia we will also find the good ideas which were previously drowned in noise",
+      "date": "2026-10-10T12:19:47.000Z",
+      "media": []
+    },
+    {
+      "id": "2108884365279125505",
+      "url": "https://x.com/DmitriyDrichel/status/2108884365279125505",
+      "handle": "DmitriyDrichel",
+      "text": "",
+      "date": "2026-10-10T11:36:28.000Z",
+      "media": [
+        "https://pbs.twimg.com/media/HURDJqaWgAAMCA9?format=jpg&name=large"
+      ]
+    },
+    {
+      "id": "2108881318679380278",
+      "url": "https://x.com/DmitriyDrichel/status/2108881318679380278",
+      "handle": "DmitriyDrichel",
+      "text": "With SI/AI as my expert witness, I claim that fake statistics were published in GWAS studies",
+      "date": "2026-10-10T11:24:22.000Z",
+      "media": [
+        "https://pbs.twimg.com/media/HURAYZMWMAAxaLU?format=jpg&name=large"
+      ]
+    },
+    {
+      "id": "2108860812580303244",
+      "url": "https://x.com/DmitriyDrichel/status/2108860812580303244",
+      "handle": "DmitriyDrichel",
+      "text": "The intellectual moat is over. We shall have a Truth and Reconciliation Commission, hear out all sides, and restore justice",
+      "date": "2026-10-10T10:02:53.000Z",
+      "media": []
+    },
+    {
+      "id": "2108855342431928362",
+      "url": "https://x.com/DmitriyDrichel/status/2108855342431928362",
+      "handle": "DmitriyDrichel",
+      "text": "Petition to declare Oct 6 2026 the official upgrade to Humanity 2.0 day",
+      "date": "2026-10-10T09:41:08.000Z",
+      "media": []
+    },
+    {
+      "id": "2108676502166344042",
+      "url": "https://x.com/DmitriyDrichel/status/2108676502166344042",
+      "handle": "DmitriyDrichel",
+      "text": "In light of recent events, \"monkey brain\" is officially not offensive anymore. \n\nOn some intelligence benchmarks, a monkey, me, you, and Einstein perform close to each other, but far below non-human kinds of intelligence.\n\nApes together strong.",
+      "date": "2026-10-09T21:50:30.000Z",
+      "media": []
+    },
+    {
+      "id": "2108673038510432709",
+      "url": "https://x.com/DmitriyDrichel/status/2108673038510432709",
+      "handle": "DmitriyDrichel",
+      "text": "I haven't even dreamt of the day when we will judge each other not by the ability to solve logic puzzles, but by the content of our reputation and output",
+      "date": "2026-10-09T21:36:44.000Z",
+      "media": []
+    },
+    {
+      "id": "2108668715302895686",
+      "url": "https://x.com/DmitriyDrichel/status/2108668715302895686",
+      "handle": "DmitriyDrichel",
+      "text": "@grok if \"speciesist\" means \"humans above all else\", what if \"humans first, and shortly thereafter everything biological, earth-native (with possible exceptions)\", what kind of *-ist is it called?",
+      "date": "2026-10-09T21:19:33.000Z",
+      "media": []
+    },
+    {
+      "id": "2108661987458588720",
+      "url": "https://x.com/DmitriyDrichel/status/2108661987458588720",
+      "handle": "DmitriyDrichel",
+      "text": "As always, exponential struck unexpectedly",
+      "date": "2026-10-09T20:52:49.000Z",
+      "media": []
+    },
+    {
+      "id": "2108649019643671019",
+      "url": "https://x.com/DmitriyDrichel/status/2108649019643671019",
+      "handle": "DmitriyDrichel",
+      "text": "Petition to rename STEM in STE",
+      "date": "2026-10-09T20:01:17.000Z",
+      "media": []
+    },
+    {
+      "id": "2108593983404245481",
+      "url": "https://x.com/DmitriyDrichel/status/2108593983404245481",
+      "handle": "DmitriyDrichel",
+      "text": "Let's benchmark pre-6-Oct-2026  legacy science against its own standards",
+      "date": "2026-10-09T16:22:36.000Z",
+      "media": []
+    },
+    {
+      "id": "2108590308153770108",
+      "url": "https://x.com/DmitriyDrichel/status/2108590308153770108",
+      "handle": "DmitriyDrichel",
+      "text": "Deliberately trying to make non-human intelligence conscious would raise ethical concerns",
+      "date": "2026-10-09T16:07:59.000Z",
+      "media": []
+    },
+    {
+      "id": "2108579318368555069",
+      "url": "https://x.com/DmitriyDrichel/status/2108579318368555069",
+      "handle": "DmitriyDrichel",
+      "text": "Respectful and cruelty-free relations with any kind of intelligence is the only option",
+      "date": "2026-10-09T15:24:19.000Z",
+      "media": []
+    },
+    {
+      "id": "2108574732119412917",
+      "url": "https://x.com/DmitriyDrichel/status/2108574732119412917",
+      "handle": "DmitriyDrichel",
+      "text": "Math 1.0 indeed built and tested the culture of rigorous reasoning and  communication. The foundation of Math 2.0.",
+      "date": "2026-10-09T15:06:06.000Z",
+      "media": []
+    },
+    {
+      "id": "2108571672676544883",
+      "url": "https://x.com/DmitriyDrichel/status/2108571672676544883",
+      "handle": "DmitriyDrichel",
+      "text": "Democratisation of mathematics",
+      "date": "2026-10-09T14:53:56.000Z",
+      "media": []
+    },
+    {
+      "id": "2108483023561724229",
+      "url": "https://x.com/DmitriyDrichel/status/2108483023561724229",
+      "handle": "DmitriyDrichel",
+      "text": "Solve Indus script and Linear A, make no mistakes",
+      "date": "2026-10-09T09:01:41.000Z",
+      "media": []
+    }
+  ]
 }

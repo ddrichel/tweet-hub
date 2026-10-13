@@ -1,7 +1,7 @@
-# Regeln für dieses Repo
+# Rules for this repo
 
-Dieses Repo ist **öffentlich**.
+This repository is **public**. Everything in it is public-facing and written in **English only**.
 
-- Keine privaten, geschäftlichen oder familiären Details des Besitzers: keine Firmen, Gründungs- oder Rechtsformangaben, keine Wohnorte, E-Mail-Adressen, Familienmitglieder, Finanzen oder Behördentermine.
-- Öffentlicher Name ist ausschließlich **ddrichel**.
-- Vor jedem Commit `node scripts/privacy-guard.js` ausführen. Schlägt er an, die Stelle entfernen, nicht den Check umgehen.
+- No private, business or family details about the owner: no companies, incorporation or legal-entity details, home location, email addresses, family members, finances or appointments with authorities.
+- The only public name is **ddrichel**.
+- Run `node scripts/privacy-guard.js` before every commit. If it flags something, remove it; never bypass the check.

@@ -1,18 +1,18 @@
-// Importiert alle Tweets aus dem X-Datenarchiv in tweets.json.
-// Aufruf: node scripts/import-archive.js <archiv-ordner> [--since JJJJ-MM-TT] [--replies] [--retweets]
-// Der Ordner ist das entpackte Archiv (enthält data/tweets.js und data/account.js).
+// Imports posts from an X data archive into tweets.json.
+// Usage: node scripts/import-archive.js <archive-folder> [--since YYYY-MM-DD] [--replies] [--retweets]
+// The folder is the unzipped archive (contains data/tweets.js and data/account.js).
 const fs = require('fs');
 const path = require('path');
 
 const dir = process.argv[2];
 const withReplies = process.argv.includes('--replies');
 const withRetweets = process.argv.includes('--retweets');
-// --since 2026-01-01: nur Tweets ab diesem Datum (Standard: ab 1. Januar des laufenden Jahres)
+// --since 2026-01-01: only posts from this date on (default: January 1 of the current year)
 const sinceArg = process.argv[process.argv.indexOf('--since') + 1];
 const since = new Date(process.argv.includes('--since') ? sinceArg : new Date().getFullYear() + '-01-01');
-if (!dir) { console.error('Aufruf: node scripts/import-archive.js <archiv-ordner>'); process.exit(1); }
+if (!dir) { console.error('Usage: node scripts/import-archive.js <archive-folder>'); process.exit(1); }
 
-// Die Archivdateien sind JS ("window.YTD.tweets.part0 = [...]") – nur den JSON-Teil lesen.
+// Archive files are JS ("window.YTD.tweets.part0 = [...]"); read only the JSON part.
 const readYtd = file => {
   const raw = fs.readFileSync(file, 'utf8');
   return JSON.parse(raw.slice(raw.indexOf('=') + 1).trim().replace(/;$/, ''));
@@ -60,4 +60,4 @@ data.tweets = data.tweets.concat(fresh).sort((a, b) => new Date(b.date) - new Da
 if (handle && !data.profile.handle) data.profile.handle = handle;
 if (name && !data.profile.name) data.profile.name = name;
 fs.writeFileSync('tweets.json', JSON.stringify(data, null, 2) + '\n');
-console.log(`${fresh.length} neue Tweets importiert (${imported.length} im Archiv nach Filter), gesamt ${data.tweets.length}.`);
+console.log(`Imported ${fresh.length} new posts (${imported.length} in archive after filters), ${data.tweets.length} total.`);

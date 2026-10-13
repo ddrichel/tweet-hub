@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +16,10 @@
     <h1 id="name"></h1>
     <div class="muted" id="handle"></div>
     <p id="bio"></p>
-    <div class="muted small"><b id="count">0</b> Tweets</div>
+    <div class="muted small"><b id="count">0</b> posts</div>
   </header>
-  <nav class="tabs"><span class="active">Tweets</span></nav>
-  <section id="feed"><p class="empty">Lade …</p></section>
+  <nav class="tabs"><span class="active">Posts</span></nav>
+  <section id="feed"><p class="empty">Loading…</p></section>
 </main>
 <script src="render.js"></script>
 <script>
@@ -35,10 +35,10 @@
     document.getElementById('avatar').outerHTML = avatarHtml(p, (p.name || '?')[0], 'avatar big');
     const tweets = (data.tweets || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
     document.getElementById('count').textContent = tweets.length;
-    feed.innerHTML = tweets.length ? '' : '<p class="empty">Noch keine Tweets. Übernimm deinen ersten mit dem Bookmarklet.</p>';
+    feed.innerHTML = tweets.length ? '' : '<p class="empty">No posts yet.</p>';
     tweets.forEach(t => feed.appendChild(renderTweet(t, p)));
   } catch (e) {
-    feed.innerHTML = '<p class="empty">tweets.json konnte nicht geladen werden.</p>';
+    feed.innerHTML = '<p class="empty">Could not load posts.</p>';
   }
 })();
 </script>

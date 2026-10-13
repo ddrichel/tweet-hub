@@ -1,55 +1,46 @@
 # Tweet Hub
 
-Deine Tweets als eigene Timeline auf GitHub Pages – ohne X-API, ohne Server, ohne Kosten.
-Your tweets as your own timeline on GitHub Pages – no X API, no server, no cost. *(English below.)*
+Your X posts as your own timeline on GitHub Pages. No X API, no server, no cost, no tokens.
 
-## So funktioniert's
+## How it works
 
-1. Du postest wie gewohnt auf X.
-2. Auf x.com klickst du das **Tweet-Hub-Bookmarklet** (auf der Tweet-Seite oder deinem Profil).
-3. GitHub öffnet ein vorausgefülltes Issue → **Submit**.
-4. Eine GitHub Action trägt den Tweet in `tweets.json` ein, schließt das Issue, und er erscheint in der Timeline.
+1. Post on X as usual.
+2. Desktop: click the **Tweet Hub bookmarklet** on a post. Mobile: in the X app, **Share → Copy link**, open `add.html`, tap **Paste link and save**.
+3. GitHub opens a prefilled issue → **Submit**.
+4. A GitHub Action adds the post to `tweets.json`, closes the issue, and the post shows up in the timeline.
 
-Kein Token, keine Secrets: Du bist bei GitHub ohnehin eingeloggt, und die Action übernimmt nur Issues vom Repo-Besitzer.
+Only issues opened by the repo owner are accepted, so nobody else can add posts.
 
-## Eigene Instanz in 2 Minuten
+## Run your own in 2 minutes
 
-1. **Forken.** Repo-Name ist frei wählbar.
-2. **Actions erlauben** (bei Forks: Tab „Actions“ → aktivieren).
-3. **GitHub Pages aktivieren:** Settings → Pages → Branch `main`, Ordner `/ (root)`.
-4. **Profil anpassen:** In `tweets.json` Name, Handle und Bio eintragen, `tweets` leer lassen.
-5. `https://<dein-name>.github.io/<repo>/add.html` öffnen und das Bookmarklet in die Lesezeichenleiste ziehen.
+1. **Fork** this repo (any name).
+2. **Enable Actions** (forks: "Actions" tab → enable).
+3. **Enable GitHub Pages:** Settings → Pages → branch `main`, folder `/ (root)`.
+4. **Edit your profile** in `tweets.json` (name, handle, bio); leave `tweets` empty.
+5. Open `https://<you>.github.io/<repo>/add.html` and drag the bookmarklet to your bookmarks bar.
 
-## Dateien
+Your avatar is taken from your GitHub profile automatically.
 
-| Datei | Zweck |
+## Import past posts
+
+1. Request your archive: https://x.com/settings/download_your_data
+2. Unzip it, then in the repo: `node scripts/import-archive.js <archive-folder>`
+   Defaults to the current year only; options: `--since YYYY-MM-DD`, `--replies`, `--retweets`.
+3. Commit and push `tweets.json`.
+
+## Files
+
+| File | Purpose |
 |---|---|
-| `index.html` | Timeline im X-Stil |
-| `add.html` | Tweet übernehmen, Bookmarklet, Einstellungen |
-| `render.js` | Darstellung eines Tweets |
-| `style.css` | Hell/Dunkel-Design |
-| `tweets.json` | Profil und Tweets (die einzige „Datenbank“) |
-| `.github/workflows/add-tweet.yml`, `scripts/add-tweet.js` | Issue → Tweet |
-| `scripts/import-archive.js` | Import aus dem X-Datenarchiv |
-| `scripts/privacy-guard.js` | Blockiert private Begriffe bei jedem Push |
+| `index.html` | X-style timeline |
+| `add.html` | Add a post, bookmarklet |
+| `render.js` | Renders a single post |
+| `style.css` | Light and dark theme |
+| `tweets.json` | Profile and posts (the only "database") |
+| `.github/workflows/add-tweet.yml`, `scripts/add-tweet.js` | Issue → post |
+| `scripts/import-archive.js` | Import from an X data archive |
+| `scripts/privacy-guard.js` | Blocks private terms on every push |
 
-Am Handy: in der X-App **Teilen → Link kopieren**, `add.html` öffnen, „Link einfügen und speichern“, Submit. Den Text holt die Action selbst.
-
-## Alle alten Tweets importieren
-
-1. X-Archiv anfordern: https://x.com/settings/download_your_data (kommt nach ca. 24 h per Mail).
-2. Entpacken, dann im Repo: `node scripts/import-archive.js <archiv-ordner>` (Standard: nur das laufende Jahr; optional `--since JJJJ-MM-TT`, `--replies`, `--retweets`).
-3. `tweets.json` committen und pushen.
-
----
-
-## English
-
-1. Fork, enable Actions and GitHub Pages (`main`, root).
-2. Edit the profile in `tweets.json`.
-3. Open `/add.html` and drag the bookmarklet to your bookmarks bar.
-4. On x.com, click the bookmarklet on a tweet → GitHub opens a prefilled issue → Submit. An Action adds it to the timeline.
-
-No tokens or secrets. Only issues opened by the repo owner are accepted. X's markup changes now and then; if the bookmarklet stops finding tweets, the selectors live at the bottom of `add.html`.
+X changes its markup now and then. If the bookmarklet stops finding posts, the selectors are at the bottom of `add.html`.
 
 MIT licensed.
