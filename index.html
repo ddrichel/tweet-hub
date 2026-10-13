@@ -33,7 +33,7 @@
     document.getElementById('name').textContent = p.name || '';
     document.getElementById('handle').textContent = p.handle ? '@' + p.handle : '';
     document.getElementById('bio').textContent = p.bio || '';
-    document.getElementById('avatar').textContent = (p.name || 'D')[0];
+    document.getElementById('avatar').outerHTML = avatarHtml(p, (p.name || '?')[0], 'avatar big');
     const tweets = (data.tweets || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
     document.getElementById('count').textContent = tweets.length;
     feed.innerHTML = tweets.length ? '' : '<p class="empty">Noch keine Tweets. Übernimm deinen ersten mit dem Bookmarklet.</p>';

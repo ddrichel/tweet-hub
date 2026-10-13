@@ -23,6 +23,7 @@ a:hover { text-decoration: underline; }
 
 .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff;
   display: flex; align-items: center; justify-content: center; font-weight: 700; flex: none; }
+.avatar { object-fit: cover; }
 .avatar.big { width: 84px; height: 84px; font-size: 36px; border: 4px solid var(--bg); }
 
 .btn { display: inline-block; border: 0; border-radius: 999px; padding: 8px 16px; font-weight: 700;

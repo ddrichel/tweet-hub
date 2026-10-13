@@ -31,6 +31,7 @@ Kein Token, keine Secrets: Du bist bei GitHub ohnehin eingeloggt, und die Action
 | `tweets.json` | Profil und Tweets (die einzige „Datenbank“) |
 | `.github/workflows/add-tweet.yml`, `scripts/add-tweet.js` | Issue → Tweet |
 | `scripts/import-archive.js` | Import aus dem X-Datenarchiv |
+| `scripts/privacy-guard.js` | Blockiert private Begriffe bei jedem Push |
 
 Am Handy: in der X-App **Teilen → Link kopieren**, `add.html` öffnen, „Link einfügen und speichern“, Submit. Den Text holt die Action selbst.
 

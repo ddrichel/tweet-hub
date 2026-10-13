@@ -20,6 +20,17 @@ function formatDate(iso) {
   return d.toLocaleDateString('de-DE', { day: 'numeric', month: 'short', year: d.getFullYear() === new Date().getFullYear() ? undefined : 'numeric' });
 }
 
+// Profilbild: profile.avatar oder automatisch das GitHub-Bild des Repo-Besitzers (owner.github.io).
+function avatarUrl(profile = {}) {
+  if (profile.avatar) return profile.avatar;
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  return m ? 'https://github.com/' + m[1] + '.png?size=200' : '';
+}
+function avatarHtml(profile, letter, cls = 'avatar') {
+  const src = avatarUrl(profile);
+  return src ? `<img class="${cls}" src="${escapeHtml(src)}" alt="">` : `<div class="${cls}">${escapeHtml(letter)}</div>`;
+}
+
 function renderTweet(t, profile = {}) {
   const el = document.createElement('article');
   el.className = 'tweet';
@@ -27,7 +38,7 @@ function renderTweet(t, profile = {}) {
   const handle = t.handle || profile.handle || '';
   const media = (t.media || []).filter(u => /^https:\/\//.test(u)).slice(0, 4);
   el.innerHTML = `
-    <div class="avatar">${escapeHtml((name || handle || '?')[0])}</div>
+    ${avatarHtml(profile, (name || handle || '?')[0])}
     <div class="body">
       <div class="meta">
         <b>${escapeHtml(name)}</b>
