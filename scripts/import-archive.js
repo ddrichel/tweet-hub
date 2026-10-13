@@ -1,5 +1,5 @@
 // Importiert alle Tweets aus dem X-Datenarchiv in tweets.json.
-// Aufruf: node scripts/import-archive.js <archiv-ordner> [--replies] [--retweets]
+// Aufruf: node scripts/import-archive.js <archiv-ordner> [--since JJJJ-MM-TT] [--replies] [--retweets]
 // Der Ordner ist das entpackte Archiv (enthält data/tweets.js und data/account.js).
 const fs = require('fs');
 const path = require('path');
@@ -7,6 +7,9 @@ const path = require('path');
 const dir = process.argv[2];
 const withReplies = process.argv.includes('--replies');
 const withRetweets = process.argv.includes('--retweets');
+// --since 2026-01-01: nur Tweets ab diesem Datum (Standard: ab 1. Januar des laufenden Jahres)
+const sinceArg = process.argv[process.argv.indexOf('--since') + 1];
+const since = new Date(process.argv.includes('--since') ? sinceArg : new Date().getFullYear() + '-01-01');
 if (!dir) { console.error('Aufruf: node scripts/import-archive.js <archiv-ordner>'); process.exit(1); }
 
 // Die Archivdateien sind JS ("window.YTD.tweets.part0 = [...]") – nur den JSON-Teil lesen.
@@ -33,6 +36,7 @@ for (const file of find('tweets')) {
     const text0 = t.full_text || t.text || '';
     if (!withRetweets && text0.startsWith('RT @')) continue;
     if (!withReplies && t.in_reply_to_status_id_str) continue;
+    if (new Date(t.created_at) < since) continue;
     let text = text0;
     for (const u of (t.entities && t.entities.urls) || []) text = text.split(u.url).join(u.expanded_url);
     const media = ((t.extended_entities || t.entities || {}).media || []);

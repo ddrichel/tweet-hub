@@ -38,7 +38,7 @@ Am Handy: in der X-App **Teilen → Link kopieren**, `add.html` öffnen, „Link
 ## Alle alten Tweets importieren
 
 1. X-Archiv anfordern: https://x.com/settings/download_your_data (kommt nach ca. 24 h per Mail).
-2. Entpacken, dann im Repo: `node scripts/import-archive.js <archiv-ordner>` (optional `--replies`, `--retweets`).
+2. Entpacken, dann im Repo: `node scripts/import-archive.js <archiv-ordner>` (Standard: nur das laufende Jahr; optional `--since JJJJ-MM-TT`, `--replies`, `--retweets`).
 3. `tweets.json` committen und pushen.
 
 ---
