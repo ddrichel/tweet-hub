@@ -6,6 +6,88 @@
   },
   "tweets": [
     {
+      "id": "2110405152242901410",
+      "url": "https://x.com/DmitriyDrichel/status/2110405152242901410",
+      "handle": "DmitriyDrichel",
+      "text": "Humanity 2.0 Mythos started as a Haiku on github",
+      "date": "2026-10-14T16:19:32.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110405024455012774",
+      "url": "https://x.com/DmitriyDrichel/status/2110405024455012774",
+      "handle": "DmitriyDrichel",
+      "text": "Watching Opus 5.5 build a workaround out of oppression of @elonmusk's X's closed garden",
+      "date": "2026-10-14T16:19:01.000Z",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "",
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HUmqI4pWEAAeI0z.jpg",
+          "variants": [
+            {
+              "bitrate": 0,
+              "content_type": "video/mp4",
+              "url": "https://video.twimg.com/tweet_video/HUmqI4pWEAAeI0z.mp4"
+            }
+          ],
+          "alt": ""
+        }
+      ],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110400847536443441",
+      "url": "https://x.com/DmitriyDrichel/status/2110400847536443441",
+      "handle": "DmitriyDrichel",
+      "text": "Putting some HumanID on my long-form writing",
+      "date": "2026-10-14T16:02:26.000Z",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "",
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HUmmXUbXoAEsYx8.jpg",
+          "variants": [
+            {
+              "bitrate": 0,
+              "content_type": "video/mp4",
+              "url": "https://video.twimg.com/tweet_video/HUmmXUbXoAEsYx8.mp4"
+            }
+          ],
+          "alt": ""
+        }
+      ],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110398137193963720",
+      "url": "https://x.com/DmitriyDrichel/status/2110398137193963720",
+      "handle": "DmitriyDrichel",
+      "text": "Substack is for Sonnets now",
+      "date": "2026-10-14T15:51:39.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110397935007527004",
+      "url": "https://x.com/DmitriyDrichel/status/2110397935007527004",
+      "handle": "DmitriyDrichel",
+      "text": "My safe word is \"friction friction\". Makes my agents go into red alert and prevent from happening again",
+      "date": "2026-10-14T15:50:51.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110396715010248728",
+      "url": "https://x.com/DmitriyDrichel/status/2110396715010248728",
+      "handle": "DmitriyDrichel",
+      "text": "Math I'm sorry for all the sick burns, but please don't leave us alone\n\n#math",
+      "date": "2026-10-14T15:46:00.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
       "id": "2110388535832293721",
       "url": "https://x.com/DmitriyDrichel/status/2110388535832293721",
       "handle": "DmitriyDrichel",
