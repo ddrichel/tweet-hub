@@ -159,7 +159,9 @@
           ],
           "alt": "",
           "width": 500,
-          "height": 374
+          "height": 374,
+          "localUrl": "media/2110327809918853304/b1c99f05339e7b84.mp4",
+          "localPoster": "media/2110327809918853304/e8721b7be7e4f8ba.jpg"
         }
       ],
       "name": "ddrichel",
@@ -2231,7 +2233,8 @@
           "poster": "",
           "variants": [],
           "width": 1254,
-          "height": 1254
+          "height": 1254,
+          "localUrl": "media/2110061454783377700/954cb79df99ae763.jpg"
         }
       ],
       "name": "ddrichel",
@@ -3142,7 +3145,8 @@
           "poster": "",
           "variants": [],
           "width": 1254,
-          "height": 1254
+          "height": 1254,
+          "localUrl": "media/2110000365680595027/29cd7b144e62f07d.jpg"
         }
       ],
       "name": "ddrichel",
@@ -5214,7 +5218,9 @@
           ],
           "alt": "",
           "width": 250,
-          "height": 250
+          "height": 250,
+          "localUrl": "media/2109947442225422800/2977160b09a1a0d9.mp4",
+          "localPoster": "media/2109947442225422800/f4f8e1aeb13e09fe.jpg"
         }
       ],
       "name": "ddrichel",
@@ -5788,7 +5794,9 @@
           ],
           "alt": "",
           "width": 250,
-          "height": 250
+          "height": 250,
+          "localUrl": "media/2109945866601550149/6df080fbae759c26.mp4",
+          "localPoster": "media/2109945866601550149/7a704e38b475b822.jpg"
         }
       ],
       "inReplyTo": {
@@ -6238,7 +6246,9 @@
           ],
           "alt": "",
           "width": 250,
-          "height": 250
+          "height": 250,
+          "localUrl": "media/2109943933736280530/9df77164c1ac375c.mp4",
+          "localPoster": "media/2109943933736280530/6ea64f3191f0e4b2.jpg"
         }
       ],
       "name": "ddrichel",
@@ -7151,7 +7161,8 @@
           "poster": "",
           "variants": [],
           "width": 675,
-          "height": 500
+          "height": 500,
+          "localUrl": "media/2109921521812533295/b69a44c01e2a0cf8.jpg"
         }
       ],
       "inReplyTo": {
@@ -11100,7 +11111,9 @@
           ],
           "alt": "",
           "width": 406,
-          "height": 276
+          "height": 276,
+          "localUrl": "media/2109626815513866701/8a9e67abec87ffab.mp4",
+          "localPoster": "media/2109626815513866701/5ea09d40470f4374.jpg"
         }
       ],
       "name": "ddrichel",
@@ -13481,7 +13494,8 @@
           "poster": "",
           "variants": [],
           "width": 1254,
-          "height": 1254
+          "height": 1254,
+          "localUrl": "media/2108903964343157019/5270a41bb8bb4f8f.jpg"
         }
       ],
       "inReplyTo": {
@@ -13491,7 +13505,12 @@
         "text": "",
         "date": "2026-10-10T11:36:28.000Z",
         "media": [
-          "https://pbs.twimg.com/media/HURDJqaWgAAMCA9?format=jpg&name=large"
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HURDJqaWgAAMCA9?format=jpg&name=large",
+            "alt": "",
+            "localUrl": "media/2108884365279125505/a8946089422b29d1.jpg"
+          }
         ]
       },
       "name": "ddrichel",
@@ -13969,7 +13988,8 @@
               "variants": [],
               "alt": "",
               "width": 1254,
-              "height": 1254
+              "height": 1254,
+              "localUrl": "media/2108903964343157019/5270a41bb8bb4f8f.jpg"
             }
           ],
           "entities": {
@@ -14657,7 +14677,8 @@
           "poster": "",
           "variants": [],
           "width": 1254,
-          "height": 1254
+          "height": 1254,
+          "localUrl": "media/2108884365279125505/4d1e1d1cb5251892.jpg"
         }
       ],
       "inReplyTo": {
@@ -14667,7 +14688,12 @@
         "text": "With SI/AI as my expert witness, I claim that fake statistics were published in GWAS studies",
         "date": "2026-10-10T11:24:22.000Z",
         "media": [
-          "https://pbs.twimg.com/media/HURAYZMWMAAxaLU?format=jpg&name=large"
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HURAYZMWMAAxaLU?format=jpg&name=large",
+            "alt": "",
+            "localUrl": "media/2108881318679380278/b21429c60351f796.jpg"
+          }
         ]
       },
       "name": "ddrichel",
@@ -15122,7 +15148,8 @@
           "poster": "",
           "variants": [],
           "width": 1127,
-          "height": 1396
+          "height": 1396,
+          "localUrl": "media/2108881318679380278/488c1904015654ec.jpg"
         }
       ],
       "name": "ddrichel",
