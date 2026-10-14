@@ -33,6 +33,8 @@ Photos, animated GIFs and videos are retained as typed media, including original
 
 Issue imports also try X's public embed payload for the known post ID. It preserves the exact raw source text and payload separately from the displayed text, with the capture time. Saved quote posts, link cards and polls remain available. If this public source is unavailable, the original capture is kept. Enrich existing saved IDs with `node scripts/hydrate-posts.js --pending`; this is not an exhaustive account sync.
 
+`node scripts/mirror-media.js` saves captured images, GIF/video playback files and posters under `media/`. The timeline reads these copies first, while original URLs and variant metadata stay in the archive. The owner-only add-post workflow also mirrors captured media. A failed download keeps the original source link and reports the remaining gap.
+
 The bookmarklet on a post page keeps visible own entries and Grok bodies. It records only explicit parent references and never guesses links from adjacent cards. Expand and load the intended public conversation before capture; off-screen/unloaded replies cannot be recovered by this script. Large captures download as complete JSON rather than being shortened to fit an issue URL:
 
 ```bash

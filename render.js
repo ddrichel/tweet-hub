@@ -29,9 +29,10 @@ function mediaHtml(values=[]) {
   const media=values.map(Media.normalize).filter(Boolean);
   if(!media.length)return '';
   return `<div class="media n${Math.min(media.length,4)}">${media.map(item=>{
-    const alt=escapeHtml(item.alt||'Post media'),poster=safeUrl(item.poster),src=safeUrl(item.url);
+    const local=value=>/^media\/\d+\/[a-f0-9]{16}\.(?:mp4|jpe?g|png|webp|gif)$/.test(value||'')?value:'';
+    const alt=escapeHtml(item.alt||'Post media'),poster=local(item.localPoster)||safeUrl(item.poster),src=local(item.localUrl)||safeUrl(item.url);
     if(item.type==='photo')return `<a class="media-item" href="${escapeHtml(src)}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(src)}" loading="lazy" alt="${alt}"></a>`;
-    const sources=(item.variants||[]).filter(v=>v.content_type==='video/mp4').map(v=>`<source src="${escapeHtml(v.url)}" type="video/mp4">`).join('')|| (src?`<source src="${escapeHtml(src)}" type="video/mp4">`:'');
+    const sources=(local(item.localUrl)?`<source src="${escapeHtml(src)}" type="video/mp4">`:'')+(item.variants||[]).filter(v=>v.content_type==='video/mp4').sort((a,b)=>(b.bitrate||0)-(a.bitrate||0)).map(v=>`<source src="${escapeHtml(v.url)}" type="video/mp4">`).join('')|| (src?`<source src="${escapeHtml(src)}" type="video/mp4">`:'');
     const gif=item.type==='animated_gif';
     return `<div class="media-item ${gif?'gif':'video'}">${sources?`<video ${gif?'autoplay loop muted':'controls'} playsinline preload="metadata" ${poster?`poster="${escapeHtml(poster)}"`:''} aria-label="${alt}">${sources}</video>`:poster?`<img src="${escapeHtml(poster)}" loading="lazy" alt="${alt}">`:''}${gif?'<span class="media-label">GIF</span>':''}${!sources?'<span class="media-label">Playback source not captured</span>':''}</div>`;
   }).join('')}</div>`;
