@@ -18,11 +18,14 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: node scripts/add-tweet.js
       - name: Commit
+        env:
+          COMMIT_TITLE: ${{ github.event.issue.title }}
         run: |
+          node scripts/privacy-guard.js
           git config user.name "tweet-hub-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add tweets.json
-          git diff --cached --quiet && echo "No change" || git commit -m "${{ github.event.issue.title }}"
+          git diff --cached --quiet && echo "No change" || git commit -m "$COMMIT_TITLE"
           git push
       - name: Close issue
         env:

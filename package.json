@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check:privacy": "node scripts/privacy-guard.js",
+    "report:conversations": "node scripts/conversation-report.js"
+  }
+}

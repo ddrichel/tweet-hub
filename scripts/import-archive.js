@@ -3,6 +3,7 @@
 // The folder is the unzipped archive (contains data/tweets.js and data/account.js).
 const fs = require('fs');
 const path = require('path');
+const {upsert}=require('./post-data.js');
 
 const dir = process.argv[2];
 const withReplies = process.argv.includes('--replies');
@@ -22,10 +23,10 @@ const find = name => {
   return fs.readdirSync(data).filter(f => new RegExp('^' + name + '(-part\\d+)?\\.js$').test(f)).map(f => path.join(data, f));
 };
 
-let handle = '', name = '';
+let handle = '';
 try {
   const acc = readYtd(find('account')[0])[0].account;
-  handle = acc.username; name = acc.accountDisplayName || '';
+  handle = acc.username;
 } catch {}
 
 const decode = s => s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
@@ -37,27 +38,27 @@ for (const file of find('tweets')) {
     if (!withRetweets && text0.startsWith('RT @')) continue;
     if (!withReplies && t.in_reply_to_status_id_str) continue;
     if (new Date(t.created_at) < since) continue;
-    let text = text0;
-    for (const u of (t.entities && t.entities.urls) || []) text = text.split(u.url).join(u.expanded_url);
+    const text = text0;
     const media = ((t.extended_entities || t.entities || {}).media || []);
-    for (const m of media) text = text.split(m.url).join('');
-    imported.push({
+    const parentId=t.in_reply_to_status_id_str||null, parentHandle=t.in_reply_to_screen_name||'';
+    const post={
       id: t.id_str,
       url: handle ? `https://x.com/${handle}/status/${t.id_str}` : '',
       handle,
-      text: decode(text).trim(),
+      text: decode(text),
       date: new Date(t.created_at).toISOString(),
-      media: media.filter(m => m.type === 'photo').map(m => m.media_url_https).slice(0, 4)
-    });
+      media: media.filter(m => m.type === 'photo').map(m => m.media_url_https),
+      replyToId:parentId,replyStatus:parentId?'reply':'post',textStatus:'complete',
+      source:{kind:'x-archive',file:path.basename(file),originalText:text0,originalDate:t.created_at,transformations:['HTML entity decoding']}
+    };
+    if(parentId) post.inReplyTo={id:parentId,handle:parentHandle,url:`https://x.com/${parentHandle||'i/web'}/status/${parentId}`,media:[],missing:true};
+    imported.push(post);
   }
 }
 
 const data = JSON.parse(fs.readFileSync('tweets.json', 'utf8'));
-data.tweets = data.tweets || [];
-const known = new Set(data.tweets.map(t => t.id).filter(Boolean));
-const fresh = imported.filter(t => !known.has(t.id));
-data.tweets = data.tweets.concat(fresh).sort((a, b) => new Date(b.date) - new Date(a.date));
-if (handle && !data.profile.handle) data.profile.handle = handle;
-if (name && !data.profile.name) data.profile.name = name;
-fs.writeFileSync('tweets.json', JSON.stringify(data, null, 2) + '\n');
-console.log(`Imported ${fresh.length} new posts (${imported.length} in archive after filters), ${data.tweets.length} total.`);
+const result=upsert(data,imported);
+if (handle && !result.data.profile.handle) result.data.profile.handle = handle;
+if (handle && !result.data.profile.name) result.data.profile.name = handle;
+fs.writeFileSync('tweets.json', JSON.stringify(result.data, null, 2) + '\n');
+console.log(`Imported ${result.added} new entries; enriched ${result.updated} (${imported.length} archive entries after filters).`);

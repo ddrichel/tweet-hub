@@ -1,71 +1,59 @@
-// Renders one post as an X-style card. Shared by index.html and add.html (preview).
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-}
-
+const Conversations=globalThis.TweetHubConversations||(typeof module==='object'?require('./conversation.js'):null);
+function escapeHtml(value) {return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function safeUrl(value) {try{const url=new URL(value);return ['https:','http:'].includes(url.protocol)&&!url.username&&!url.password?url.href:'';}catch{return '';}}
+function postUrl(value) {const url=safeUrl(value);return /^https:\/\/(?:x|twitter)\.com\/(?:\w{1,15}\/status|i\/web\/status)\/\d+(?:[/?#]|$)/.test(url)?url:'';}
 function linkify(text) {
-  return escapeHtml(text)
-    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
-    .replace(/(^|\s)#([\p{L}\p{N}_]+)/gu, '$1<a href="https://x.com/hashtag/$2" target="_blank" rel="noopener">#$2</a>')
-    .replace(/(^|\s)@(\w{1,15})/g, '$1<a href="https://x.com/$2" target="_blank" rel="noopener">@$2</a>');
+  const pattern=/https?:\/\/[^\s<>]+|(^|\s)([@#][\p{L}\p{N}_]+)/gu;
+  let output='',last=0;
+  for(const match of String(text).matchAll(pattern)) {
+    output+=escapeHtml(String(text).slice(last,match.index));
+    const token=match[0],prefix=match[1]||'',word=match[2];
+    if(word) {const target=word[0]==='@'?'https://x.com/'+encodeURIComponent(word.slice(1)):'https://x.com/hashtag/'+encodeURIComponent(word.slice(1));output+=escapeHtml(prefix)+`<a href="${target}" target="_blank" rel="noopener noreferrer">${escapeHtml(word)}</a>`;}
+    else {const url=safeUrl(token);output+=url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(token)}</a>`:escapeHtml(token);}
+    last=match.index+token.length;
+  }
+  return output+escapeHtml(String(text).slice(last));
 }
-
 function formatDate(iso) {
-  const d = new Date(iso);
-  if (isNaN(d)) return '';
-  const diff = (Date.now() - d) / 1000;
-  if (diff < 60) return 'now';
-  if (diff < 3600) return Math.floor(diff / 60) + 'm';
-  if (diff < 86400) return Math.floor(diff / 3600) + 'h';
-  return d.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: d.getFullYear() === new Date().getFullYear() ? undefined : 'numeric' });
+  const date=new Date(iso);if(isNaN(date))return 'Date not captured';
+  const diff=(Date.now()-date)/1000;
+  if(diff>=0 && diff<60)return 'now';if(diff>=0 && diff<3600)return Math.floor(diff/60)+'m';if(diff>=0 && diff<86400)return Math.floor(diff/3600)+'h';
+  return date.toLocaleDateString('en-US',{day:'numeric',month:'short',year:date.getFullYear()===new Date().getFullYear()?undefined:'numeric'});
 }
+function avatarUrl(profile={}) {if(safeUrl(profile.avatar))return safeUrl(profile.avatar);const match=location.hostname.match(/^([^.]+)\.github\.io$/);return match?'https://github.com/'+match[1]+'.png?size=200':'';}
+function avatarHtml(profile,letter,cls='avatar') {const src=avatarUrl(profile);return src?`<img class="${cls}" src="${escapeHtml(src)}" alt="">`:`<div class="${cls}">${escapeHtml(letter)}</div>`;}
+function postElementId(key) {return 'post-'+String(key).replace(/[^A-Za-z0-9_-]/g,'_');}
 
-// Avatar: profile.avatar, or the GitHub picture of the repo owner (owner.github.io).
-function avatarUrl(profile = {}) {
-  if (profile.avatar) return profile.avatar;
-  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
-  return m ? 'https://github.com/' + m[1] + '.png?size=200' : '';
+function postCard(post,profile={},opts={}) {
+  const element=document.createElement('article'),node=opts.node;
+  element.className='tweet'+(opts.cls?' '+opts.cls:'');
+  if(node) {element.id=postElementId(node.key);element.dataset.postId=node.id||'';element.dataset.actor=node.actor;element.dataset.replyStatus=node.replyStatus;}
+  const owner=post.handle&&profile.handle&&post.handle.toLowerCase()===profile.handle.toLowerCase();
+  const name=owner?(profile.name||post.handle):(post.name||post.handle||'Author not captured'),handle=post.handle||'';
+  const avatar=owner?avatarHtml(profile,(name||'?')[0]):safeUrl(post.avatar)?`<img class="avatar" src="${escapeHtml(safeUrl(post.avatar))}" alt="">`:`<div class="avatar">${escapeHtml((name||'?')[0])}</div>`;
+  const media=(Array.isArray(post.media)?post.media:[]).map(safeUrl).filter(Boolean),url=postUrl(post.url);
+  const parents=node&&opts.graph?[...node.parentIds].map(key=>opts.graph.nodes.get(key)):[];
+  element.innerHTML=`<div class="side">${avatar}${opts.line?'<div class="line"></div>':''}</div><div class="body">
+    <div class="meta"><b>${escapeHtml(name)}</b><span class="muted">${handle?'@'+escapeHtml(handle):''}</span><time class="muted" datetime="${escapeHtml(post.date||'')}" title="${escapeHtml(post.date||'')}">${escapeHtml(formatDate(post.date))}</time></div>
+    ${node?`<div class="post-kind ${node.actor==='grok'?'grok':''}">${escapeHtml(node.missing?'Parent not captured':Conversations.label(node))}</div>`:''}
+    ${parents.length?`<div class="reply-to">Replying to ${parents.map(parent=>`<a href="#${postElementId(parent.key)}">${parent.post.handle?'@'+escapeHtml(parent.post.handle):'post '+escapeHtml(parent.id||'')}</a>`).join(', ')}</div>`:node?.replyStatus==='reply'?'<div class="reply-to">Reply parent not captured.</div>':''}
+    ${node?.missing?'<div class="text muted">Parent body not captured.</div>':typeof post.text==='string'?`<div class="text">${linkify(post.text)}</div>`:''}
+    ${media.length?`<div class="media n${Math.min(media.length,4)}">${media.map(src=>`<img src="${escapeHtml(src)}" loading="lazy" alt="Saved post media">`).join('')}</div>`:''}
+    ${node?.captureStatus==='excerpt'?'<p class="capture-note">Captured excerpt · full text not saved.</p>':node?.actor==='grok'&&node.captureStatus!=='complete'?'<p class="capture-note">Capture completeness unconfirmed.</p>':''}
+    ${node?.textVariants.length>1?`<details class="capture-versions"><summary>${node.textVariants.length} captured text versions</summary>${node.textVariants.map(text=>`<div class="text">${linkify(text)}</div>`).join('')}</details>`:''}
+    ${url?`<div class="actions"><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">View on X ↗</a></div>`:''}</div>`;
+  return element;
 }
-function avatarHtml(profile, letter, cls = 'avatar') {
-  const src = avatarUrl(profile);
-  return src ? `<img class="${cls}" src="${escapeHtml(src)}" alt="">` : `<div class="${cls}">${escapeHtml(letter)}</div>`;
+function renderConversation(conversation,graph,filter='all') {
+  const wrapper=document.createElement('section');wrapper.className='thread';wrapper.dataset.conversationId=conversation.id;
+  const saved=conversation.entries.filter(({node})=>!node.missing).length;
+  if(conversation.entries.length>1) {const heading=document.createElement('h2');heading.className='thread-heading';heading.textContent='Conversation · '+saved+' saved entries';wrapper.appendChild(heading);}
+  conversation.entries.forEach(({node},index)=>{const cls=node.missing?'context':Conversations.matches(node,filter)?'main':'context';wrapper.appendChild(postCard({...node.post,url:Conversations.nodesUrl(node)},graph.profile,{node,graph,cls,line:index<conversation.entries.length-1}));});
+  const actions=document.createElement('div');actions.className='thread-actions';
+  const button=document.createElement('button');button.className='copy-conversation';button.type='button';button.textContent=conversation.entries.length>1?'Copy conversation':'Copy entry';
+  const status=document.createElement('span');status.className='muted small';status.setAttribute('role','status');
+  button.onclick=async()=>{try{await navigator.clipboard.writeText(Conversations.transcript(conversation,graph));status.textContent='Copied';}catch{status.textContent='Clipboard unavailable';}};
+  actions.append(button,status);wrapper.appendChild(actions);return wrapper;
 }
-
-// One post card. `author` overrides the profile for posts by other accounts (e.g. a reply from @grok).
-function postCard(t, profile, opts = {}) {
-  const el = document.createElement('article');
-  el.className = 'tweet' + (opts.cls ? ' ' + opts.cls : '');
-  const other = t.handle && profile.handle && t.handle.toLowerCase() !== profile.handle.toLowerCase();
-  const name = other ? (t.name || t.handle) : (profile.name || t.name || '');
-  const handle = t.handle || profile.handle || '';
-  const avatar = other
-    ? (t.avatar ? `<img class="avatar" src="${escapeHtml(t.avatar)}" alt="">` : `<div class="avatar">${escapeHtml((name || '?')[0])}</div>`)
-    : avatarHtml(profile, (name || handle || '?')[0]);
-  const media = (t.media || []).filter(u => /^https:\/\//.test(u)).slice(0, 4);
-  el.innerHTML = `
-    <div class="side">${avatar}${opts.line ? '<div class="line"></div>' : ''}</div>
-    <div class="body">
-      <div class="meta">
-        <b>${escapeHtml(name)}</b>
-        <span class="muted">${handle ? '@' + escapeHtml(handle) : ''} · ${escapeHtml(formatDate(t.date))}</span>
-      </div>
-      ${opts.replyingTo ? `<div class="muted small">Replying to <a href="https://x.com/${escapeHtml(opts.replyingTo)}" target="_blank" rel="noopener">@${escapeHtml(opts.replyingTo)}</a></div>` : ''}
-      ${t.text ? `<div class="text">${linkify(t.text)}</div>` : ''}
-      ${media.length ? `<div class="media n${media.length}">${media.map(u => `<img src="${escapeHtml(u)}" loading="lazy" alt="">`).join('')}</div>` : ''}
-      ${t.url ? `<div class="actions"><a href="${escapeHtml(t.url)}" target="_blank" rel="noopener">View on X ↗</a></div>` : ''}
-    </div>`;
-  return el;
-}
-
-// A post with its context: the post it replies to above, answers (e.g. from @grok) below.
-function renderTweet(t, profile = {}) {
-  const parent = t.inReplyTo;
-  const replies = t.replies || [];
-  if (!parent && !replies.length) return postCard(t, profile);
-  const wrap = document.createElement('div');
-  wrap.className = 'thread';
-  if (parent) wrap.appendChild(postCard(parent, profile, { cls: 'context', line: true }));
-  wrap.appendChild(postCard(t, profile, { cls: 'main', line: replies.length > 0, replyingTo: parent && parent.handle }));
-  replies.forEach((r, i) => wrap.appendChild(postCard(r, profile, { cls: 'answer', line: i < replies.length - 1, replyingTo: t.handle || profile.handle })));
-  return wrap;
-}
+function renderTweet(post,profile={}) {const graph=Conversations.build({profile,tweets:[post]});return renderConversation(graph.conversations[0],graph);}
+if(typeof module==='object' && module.exports) module.exports={escapeHtml,safeUrl,postUrl,linkify,formatDate,postCard,renderTweet,renderConversation,postElementId};

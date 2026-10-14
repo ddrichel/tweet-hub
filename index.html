@@ -16,27 +16,43 @@
     <h1 id="name"></h1>
     <div class="muted" id="handle"></div>
     <p id="bio"></p>
-    <div class="muted small"><b id="count">0</b> posts</div>
+    <div class="muted small" id="count">Loading saved entries…</div>
   </header>
-  <nav class="tabs"><span class="active">Posts</span></nav>
+  <nav class="tabs" aria-label="Saved conversation filters">
+    <button type="button" data-filter="all" class="active" aria-pressed="true">All</button>
+    <button type="button" data-filter="posts" aria-pressed="false">Posts</button>
+    <button type="button" data-filter="replies" aria-pressed="false">Replies</button>
+    <button type="button" data-filter="grok" aria-pressed="false">Grok</button>
+  </nav>
+  <p class="feed-summary muted small" id="coverage" aria-live="polite"></p>
   <section id="feed"><p class="empty">Loading…</p></section>
 </main>
+<script src="conversation.js"></script>
 <script src="render.js"></script>
 <script>
 (async () => {
   const feed = document.getElementById('feed');
   try {
     const res = await fetch('tweets.json?t=' + Date.now());
-    const data = await res.json();
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json(), graph=TweetHubConversations.build(data);
     const p = data.profile || {};
     document.getElementById('name').textContent = p.name || '';
     document.getElementById('handle').textContent = p.handle ? '@' + p.handle : '';
     document.getElementById('bio').textContent = p.bio || '';
     document.getElementById('avatar').outerHTML = avatarHtml(p, (p.name || '?')[0], 'avatar big');
-    const tweets = (data.tweets || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
-    document.getElementById('count').textContent = tweets.length;
-    feed.innerHTML = tweets.length ? '' : '<p class="empty">No posts yet.</p>';
-    tweets.forEach(t => feed.appendChild(renderTweet(t, p)));
+    const stats=graph.stats;
+    document.getElementById('count').textContent=stats.ownerEntries+' own entries · '+stats.replies+' replies · '+stats.grok+' Grok entries';
+    function show(filter='all') {
+      const conversations=TweetHubConversations.select(graph,filter), matching=[...graph.nodes.values()].filter(node=>TweetHubConversations.matches(node,filter)).length;
+      const unknown=stats.unknownReplyStatus?stats.unknownReplyStatus+' own entries have unconfirmed reply status. ':'';
+      document.getElementById('coverage').textContent=filter==='all'?stats.savedEntries+' unique saved entries. '+unknown+'Known conversation context is included.':matching+' matching '+(filter==='grok'?'Grok entries':filter)+' in '+conversations.length+' conversations. Context is included.';
+      feed.innerHTML=conversations.length?'':'<p class="empty">'+(filter==='posts'?'No standalone posts have confirmed context yet.':'No matching saved entries.')+'</p>';
+      conversations.forEach(conversation=>feed.appendChild(renderConversation(conversation,graph,filter)));
+      document.querySelectorAll('[data-filter]').forEach(button=>{const active=button.dataset.filter===filter;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
+    }
+    document.querySelectorAll('[data-filter]').forEach(button=>button.onclick=()=>show(button.dataset.filter));
+    show();
   } catch (e) {
     feed.innerHTML = '<p class="empty">Could not load posts.</p>';
   }

@@ -29,6 +29,7 @@
   <section class="panel">
     <h2>Desktop: bookmarklet</h2>
     <p class="small muted">Drag this button to your bookmarks bar. Click it on a post on x.com, then Submit.</p>
+    <p class="small muted">On a post page, captures the visible own entries and Grok answers. Reply links are kept when explicitly present; missing links stay unconfirmed.</p>
     <a class="bookmarklet" id="bm" href="#">→ Tweet Hub</a>
   </section>
 
@@ -38,7 +39,9 @@
     <input id="repo" placeholder="owner/tweet-hub">
   </section>
 </main>
+<script src="conversation.js"></script>
 <script src="render.js"></script>
+<script src="capture.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 
@@ -67,7 +70,9 @@ function currentTweet() {
     handle: (url.match(/(?:x|twitter)\.com\/([^/]+)\/status/) || [])[1] || '',
     text: $('text').value,
     date: '',
-    media: []
+    media: [],
+    replyStatus:'unknown',
+    source:{kind:'manual-link',capturedAt:new Date().toISOString()}
   };
 }
 function showPreview() {
@@ -98,24 +103,13 @@ $('paste').onclick = async () => {
 // Bookmarklet: reads the post on x.com and opens the prefilled GitHub issue.
 function buildBookmarklet(r) {
   const code = `(()=>{const R=${JSON.stringify(r)};
-const arts=[...document.querySelectorAll('article[data-testid="tweet"]')];
-if(!arts.length){alert('Tweet Hub: no post found on this page.');return}
-const sid=(location.pathname.match(/\\/status\\/(\\d+)/)||[])[1];
-const link=a=>{const t=a.querySelector('time');return t&&t.closest('a')};
-let art=sid?arts.find(a=>{const l=link(a);return l&&l.href.includes(sid)}):arts.find(a=>!a.querySelector('[data-testid="socialContext"]'));
-art=art||arts[0];
-const txt=n=>[...n.childNodes].map(c=>c.nodeType===3?c.textContent:c.tagName==='IMG'?(c.alt||''):c.tagName==='A'?c.textContent.replace(/\\u2026$/,''):txt(c)).join('');
-const tx=art.querySelector('[data-testid="tweetText"]');
-const tm=art.querySelector('time');
-const l=link(art);
-const url=l?l.href.split('?')[0]:location.href.split('?')[0];
-const d={id:(url.match(/status\\/(\\d+)/)||[])[1]||'',url,handle:(url.match(/\\.com\\/([^/]+)\\/status/)||[])[1]||'',
-text:tx?txt(tx):'',date:tm?tm.getAttribute('datetime'):new Date().toISOString(),
-media:[...art.querySelectorAll('img[src*="pbs.twimg.com/media"]')].map(i=>i.src.replace(/name=\\w+/,'name=large'))};
+const capture=${captureTweetPage.toString()};let d;try{d=capture(document,location)}catch(error){alert(error.message);return}
 const title='tweet: '+d.text.replace(/\\s+/g,' ').slice(0,60);
 const body='\`\`\`json\\n'+JSON.stringify(d,null,2)+'\\n\`\`\`';
-window.open('https://github.com/'+R+'/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body),'_blank')})()`;
-  return 'javascript:' + encodeURIComponent(code.replace(/\n/g, ''));
+const target='https://github.com/'+R+'/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body);
+if(target.length>7500){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));a.download='tweet-conversation-'+d.id+'.json';a.click();alert('Conversation saved without truncation. Your agent can import this file with scripts/import-capture.js.');return}
+window.open(target,'_blank')})()`;
+  return 'javascript:' + encodeURIComponent(code);
 }
 function updateBookmarklet() { $('bm').href = buildBookmarklet(repo()); }
 $('repo').oninput = updateBookmarklet;
