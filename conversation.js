@@ -3,6 +3,7 @@
   if(typeof module==='object' && module.exports) module.exports=api;
   else root.TweetHubConversations=api;
 })(typeof globalThis!=='undefined'?globalThis:this, function() {
+  const Media=typeof module==='object'?require('./media.js'):globalThis.TweetHubMedia;
   const own=(value,key)=>Object.prototype.hasOwnProperty.call(value,key);
   const handle=value=>String(value||'').replace(/^@/,'').toLowerCase();
   const id=value=>typeof value==='string' && /^\d+$/.test(value)?value:'';
@@ -54,7 +55,8 @@
         return score(b.record)-score(a.record);
       });
       node.post={};
-      for(const {record} of candidates) for(const key of ['id','url','handle','name','avatar','text','date','media','textStatus']) if(!own(node.post,key) && record[key]!=null) node.post[key]=record[key];
+      for(const {record} of candidates) for(const [key,value] of Object.entries(record)) if(!own(node.post,key) && value!=null) node.post[key]=value;
+      node.post.media=Media.merge(...candidates.map(({record})=>Array.isArray(record.media)?record.media:[]));
       node.post.id=node.id;node.post.handle=node.post.handle||urlHandle(node.post.url)||node.hintHandle||'';
       node.missing=!node.records.some(({record})=>typeof record.text==='string' || (Array.isArray(record.media) && record.media.length));
       node.actor=handle(node.post.handle)===owner && owner?'owner':handle(node.post.handle)==='grok'?'grok':node.post.handle?'other':'unknown';
@@ -110,9 +112,10 @@
       const parent=[...node.parentIds].map(key=>nodesUrl(graph.nodes.get(key))).join(', ');
       const text=node.missing?'[Parent body not captured]':typeof node.post.text==='string'?node.post.text:'';
       return [author+' · '+label(node),node.post.date||'',node.id?'X ID: '+node.id:'',parent?'Reply to: '+parent:'',text,
-        ...(node.post.media||[]).map(value=>'Media: '+value),nodesUrl(node),node.captureStatus!=='complete'?'Capture completeness '+node.captureStatus:''].filter(value=>value!=='').join('\n');
+        ...(node.post.media||[]).map(value=>'Media: '+Media.describe(value)),node.post.quote?'Quoted post: '+(node.post.quote.url||'')+'\n'+(node.post.quote.text||'')+'\n'+(node.post.quote.media||[]).map(Media.describe).join('\n'):'',node.post.card?'Link card: '+JSON.stringify(node.post.card):'',node.post.poll?'Poll: '+JSON.stringify(node.post.poll):'',nodesUrl(node),node.captureStatus!=='complete'?'Capture completeness '+node.captureStatus:''].filter(value=>value!=='').join('\n');
     }).join('\n\n');
   }
   function nodesUrl(node) {return node?.post.url || (node?.id?'https://x.com/i/web/status/'+node.id:'');}
   return {build,select,matches,label,transcript,identity,nodesUrl};
 });
+

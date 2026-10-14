@@ -1,4 +1,5 @@
 const Graph=require('../conversation.js');
+const Media=require('../media.js');
 const own=(value,key)=>Object.prototype.hasOwnProperty.call(value,key);
 const clone=value=>JSON.parse(JSON.stringify(value));
 const dateFromId=id=>{try{return new Date(Number((BigInt(id)>>22n)+1288834974657n)).toISOString();}catch{return '';}};
@@ -39,7 +40,12 @@ function merge(existing,incoming) {
   const result=clone(existing), conflicts=[];
   for(const [key,value] of Object.entries(incoming)) {
     if(key==='captures') continue;
-    if(key==='replies' || key==='capturedPosts') {
+    if(key==='media') result.media=Media.merge(result.media||[],value||[]);
+    else if(key==='source' && value && result.source && JSON.stringify(result.source)!==JSON.stringify(value)) {
+      result.sourceCaptures=Array.isArray(result.sourceCaptures)?result.sourceCaptures:[];
+      if(!result.sourceCaptures.some(source=>JSON.stringify(source)===JSON.stringify(value)))result.sourceCaptures.push(clone(value));
+    }
+    else if(key==='replies' || key==='capturedPosts') {
       result[key]=Array.isArray(result[key])?result[key]:[];
       for(const child of value) {const index=result[key].findIndex(saved=>Graph.identity(saved)===Graph.identity(child));if(index<0)result[key].push(clone(child));else result[key][index]=merge(result[key][index],child);}
     } else if(key==='inReplyTo' && value && result[key] && Graph.identity(value)===Graph.identity(result[key])) result[key]=merge(result[key],value);
@@ -75,3 +81,4 @@ function upsert(data,payload) {
   return {data:result,added,updated,changed:JSON.stringify(result)!==before};
 }
 module.exports={normalize,merge,upsert,dateFromId};
+

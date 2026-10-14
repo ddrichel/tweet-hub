@@ -2,6 +2,7 @@
 // If the text is missing (e.g. only a link from mobile), it is fetched via X's oEmbed endpoint.
 const fs = require('fs');
 const {normalize,upsert}=require('./post-data.js');
+const {fromPayload}=require('./hydrate-posts.js');
 
 const decode = s => s
   .replace(/<br\s*\/?>/gi, '\n')
@@ -40,8 +41,14 @@ async function fromOembed(url) {
   if (!(typeof tweet.text==='string' && tweet.text.trim()) && !tweet.media.length) { console.error('No post text or media found.'); process.exit(1); }
 
   const data = JSON.parse(fs.readFileSync('tweets.json', 'utf8'));
-  const result=upsert(data,tweet);
+  let result=upsert(data,tweet);
+  if(tweet.id && process.env.TWEET_HUB_ENRICH!=='0') {
+    const sourceUrl='https://cdn.syndication.twimg.com/tweet-result?id='+tweet.id+'&lang=en&token=1';
+    try {const response=await fetch(sourceUrl,{signal:AbortSignal.timeout(15000)});if(response.ok){const raw=await response.json();if(raw.id_str===tweet.id){const enriched=upsert(result.data,fromPayload(raw,sourceUrl,new Date().toISOString()));result={...enriched,changed:result.changed||enriched.changed,added:result.added+enriched.added,updated:result.updated+enriched.updated};}}}
+    catch(error){console.warn('Public media enrichment unavailable; original capture retained.');}
+  }
   if(!result.changed) {console.log('Already present with the same captured context.');return;}
   fs.writeFileSync('tweets.json', JSON.stringify(result.data, null, 2) + '\n');
   console.log('Saved '+result.added+' new entries; enriched '+result.updated+' existing entries.');
 })().catch(e => { console.error(e.message); process.exit(1); });
+

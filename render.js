@@ -1,4 +1,5 @@
 const Conversations=globalThis.TweetHubConversations||(typeof module==='object'?require('./conversation.js'):null);
+const Media=globalThis.TweetHubMedia||(typeof module==='object'?require('./media.js'):null);
 function escapeHtml(value) {return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function safeUrl(value) {try{const url=new URL(value);return ['https:','http:'].includes(url.protocol)&&!url.username&&!url.password?url.href:'';}catch{return '';}}
 function postUrl(value) {const url=safeUrl(value);return /^https:\/\/(?:x|twitter)\.com\/(?:\w{1,15}\/status|i\/web\/status)\/\d+(?:[/?#]|$)/.test(url)?url:'';}
@@ -24,6 +25,29 @@ function avatarUrl(profile={}) {if(safeUrl(profile.avatar))return safeUrl(profil
 function avatarHtml(profile,letter,cls='avatar') {const src=avatarUrl(profile);return src?`<img class="${cls}" src="${escapeHtml(src)}" alt="">`:`<div class="${cls}">${escapeHtml(letter)}</div>`;}
 function postElementId(key) {return 'post-'+String(key).replace(/[^A-Za-z0-9_-]/g,'_');}
 
+function mediaHtml(values=[]) {
+  const media=values.map(Media.normalize).filter(Boolean);
+  if(!media.length)return '';
+  return `<div class="media n${Math.min(media.length,4)}">${media.map(item=>{
+    const alt=escapeHtml(item.alt||'Post media'),poster=safeUrl(item.poster),src=safeUrl(item.url);
+    if(item.type==='photo')return `<a class="media-item" href="${escapeHtml(src)}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(src)}" loading="lazy" alt="${alt}"></a>`;
+    const sources=(item.variants||[]).filter(v=>v.content_type==='video/mp4').map(v=>`<source src="${escapeHtml(v.url)}" type="video/mp4">`).join('')|| (src?`<source src="${escapeHtml(src)}" type="video/mp4">`:'');
+    const gif=item.type==='animated_gif';
+    return `<div class="media-item ${gif?'gif':'video'}">${sources?`<video ${gif?'autoplay loop muted':'controls'} playsinline preload="metadata" ${poster?`poster="${escapeHtml(poster)}"`:''} aria-label="${alt}">${sources}</video>`:poster?`<img src="${escapeHtml(poster)}" loading="lazy" alt="${alt}">`:''}${gif?'<span class="media-label">GIF</span>':''}${!sources?'<span class="media-label">Playback source not captured</span>':''}</div>`;
+  }).join('')}</div>`;
+}
+function quoteHtml(quote) {if(!quote||typeof quote!=='object')return '';const url=postUrl(quote.url);return `<div class="quoted-post">${quote.handle?`<b>@${escapeHtml(quote.handle)}</b>`:''}<div class="text">${linkify(quote.text||'')}</div>${mediaHtml(quote.media||[])}${url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Quoted post ↗</a>`:''}</div>`;}
+function cardHtml(card) {
+  if(!card||typeof card!=='object')return '';
+  const values=Array.isArray(card.binding_values)?Object.fromEntries(card.binding_values.map(x=>[x.key,x.value])):card.binding_values||{};
+  const value=key=>values[key]?.string_value||'';
+  const url=safeUrl(card.url||value('card_url')||value('vanity_url')),title=card.title||value('title'),description=card.description||value('description');
+  const image=safeUrl(card.image||values.summary_photo_image_large?.image_value?.url||values.thumbnail_image_large?.image_value?.url);
+  if(!title&&!description&&!image)return '';
+  const contents=(image?`<img src="${escapeHtml(image)}" loading="lazy" alt="">`:'')+`<div>${title?`<b>${escapeHtml(title)}</b>`:''}${description?`<p>${escapeHtml(description)}</p>`:''}</div>`;
+  return `<div class="link-card">${url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${contents}</a>`:contents}</div>`;
+}
+
 function postCard(post,profile={},opts={}) {
   const element=document.createElement('article'),node=opts.node;
   element.className='tweet'+(opts.cls?' '+opts.cls:'');
@@ -31,14 +55,16 @@ function postCard(post,profile={},opts={}) {
   const owner=post.handle&&profile.handle&&post.handle.toLowerCase()===profile.handle.toLowerCase();
   const name=owner?(profile.name||post.handle):(post.name||post.handle||'Author not captured'),handle=post.handle||'';
   const avatar=owner?avatarHtml(profile,(name||'?')[0]):safeUrl(post.avatar)?`<img class="avatar" src="${escapeHtml(safeUrl(post.avatar))}" alt="">`:`<div class="avatar">${escapeHtml((name||'?')[0])}</div>`;
-  const media=(Array.isArray(post.media)?post.media:[]).map(safeUrl).filter(Boolean),url=postUrl(post.url);
+  const url=postUrl(post.url);
   const parents=node&&opts.graph?[...node.parentIds].map(key=>opts.graph.nodes.get(key)):[];
   element.innerHTML=`<div class="side">${avatar}${opts.line?'<div class="line"></div>':''}</div><div class="body">
     <div class="meta"><b>${escapeHtml(name)}</b><span class="muted">${handle?'@'+escapeHtml(handle):''}</span><time class="muted" datetime="${escapeHtml(post.date||'')}" title="${escapeHtml(post.date||'')}">${escapeHtml(formatDate(post.date))}</time></div>
     ${node?`<div class="post-kind ${node.actor==='grok'?'grok':''}">${escapeHtml(node.missing?'Parent not captured':Conversations.label(node))}</div>`:''}
     ${parents.length?`<div class="reply-to">Replying to ${parents.map(parent=>`<a href="#${postElementId(parent.key)}">${parent.post.handle?'@'+escapeHtml(parent.post.handle):'post '+escapeHtml(parent.id||'')}</a>`).join(', ')}</div>`:node?.replyStatus==='reply'?'<div class="reply-to">Reply parent not captured.</div>':''}
     ${node?.missing?'<div class="text muted">Parent body not captured.</div>':typeof post.text==='string'?`<div class="text">${linkify(post.text)}</div>`:''}
-    ${media.length?`<div class="media n${Math.min(media.length,4)}">${media.map(src=>`<img src="${escapeHtml(src)}" loading="lazy" alt="Saved post media">`).join('')}</div>`:''}
+    ${mediaHtml(Array.isArray(post.media)?post.media:[])}
+    ${quoteHtml(post.quote||post.quotedTweet)}${cardHtml(post.card)}
+    ${Array.isArray(post.poll?.options)?`<div class="poll">${post.poll.options.map(option=>`<div class="poll-option">${escapeHtml(option.label||'')}${Number.isFinite(option.votes)?` <span class="muted">${option.votes} votes</span>`:''}</div>`).join('')}</div>`:''}
     ${node?.captureStatus==='excerpt'?'<p class="capture-note">Captured excerpt · full text not saved.</p>':node?.actor==='grok'&&node.captureStatus!=='complete'?'<p class="capture-note">Capture completeness unconfirmed.</p>':''}
     ${node?.textVariants.length>1?`<details class="capture-versions"><summary>${node.textVariants.length} captured text versions</summary>${node.textVariants.map(text=>`<div class="text">${linkify(text)}</div>`).join('')}</details>`:''}
     ${url?`<div class="actions"><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">View on X ↗</a></div>`:''}</div>`;
@@ -56,4 +82,5 @@ function renderConversation(conversation,graph,filter='all') {
   actions.append(button,status);wrapper.appendChild(actions);return wrapper;
 }
 function renderTweet(post,profile={}) {const graph=Conversations.build({profile,tweets:[post]});return renderConversation(graph.conversations[0],graph);}
-if(typeof module==='object' && module.exports) module.exports={escapeHtml,safeUrl,postUrl,linkify,formatDate,postCard,renderTweet,renderConversation,postElementId};
+if(typeof module==='object' && module.exports) module.exports={escapeHtml,safeUrl,postUrl,linkify,formatDate,postCard,renderTweet,renderConversation,postElementId,mediaHtml,quoteHtml,cardHtml};
+

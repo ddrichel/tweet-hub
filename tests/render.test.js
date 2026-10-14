@@ -18,11 +18,11 @@ test('actual feed script renders every unique saved body once and filters retain
   const data=JSON.parse(fs.readFileSync(path.join(root,'tweets.json'),'utf8'));
   const context=vm.createContext({console,URL,Date,Map,Set,document:{createElement:tag=>new Element(tag),getElementById:id=>ids[id],querySelectorAll:()=>buttons},
     location:{hostname:'ddrichel.github.io'},navigator:{clipboard:{writeText:async text=>{context.copied=text;}}},fetch:async()=>({ok:true,json:async()=>data})});
-  for(const name of ['conversation.js','render.js'])vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),context);
+  for(const name of ['media.js','conversation.js','render.js'])vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),context);
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8'),inline=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(match=>match[1]).join('\n');
   await vm.runInContext(inline,context);
   let cards=descendants(ids.feed).filter(element=>element.tag==='article');
-  const canonical=new Set();function collect(post){canonical.add(post.id);if(post.inReplyTo)collect(post.inReplyTo);(post.replies||[]).forEach(collect);}data.tweets.forEach(collect);
+  const canonical=new Set();function collect(post){canonical.add(post.id);if(post.replyToId)canonical.add(post.replyToId);if(post.inReplyTo)collect(post.inReplyTo);[...post.replies||[],...post.captures||[],...post.capturedPosts||[]].forEach(collect);}data.tweets.forEach(collect);
   assert.equal(cards.length,canonical.size);assert.equal(new Set(cards.map(card=>card.id)).size,cards.length);assert.ok(cards.every(card=>card.dataset.actor));assert.match(ids.coverage.textContent,/unconfirmed reply status/);
   buttons.find(button=>button.dataset.filter==='grok').onclick();
   const conversation=ids.feed.children.find(thread=>thread.dataset.conversationId==='2109756805530484933');assert.ok(conversation);
@@ -46,3 +46,4 @@ test('DOM capture preserves emoji/newlines and never infers reply edges from nei
   const grok=captured.capturedPosts.find(post=>post.handle==='grok');assert.equal(grok.replyStatus,'unknown');assert.equal(grok.replyToId,undefined);assert.equal(grok.textStatus,'excerpt');
   assert.match(captured.source.coverage,/not a complete X conversation/);
 });
+

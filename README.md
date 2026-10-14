@@ -29,6 +29,10 @@ Posts means confirmed standalone own posts. Legacy entries with no recorded repl
 
 `inReplyTo` remains a nested object and `replies` remains a recursive array. New captures can also provide `replyToId` and `replyStatus` (`post`, `reply`, `unknown`). Missing parent bodies stay visible as references. Differing body captures are retained in `captures`; the renderer keeps their exact text versions inspectable. Source completeness is confirmed only when supplied by the capture, such as a full archive entry. Unconfirmed completeness does not assert truncation.
 
+Photos, animated GIFs and videos are retained as typed media, including original URLs, video variants, poster images, dimensions and alt text when supplied by the source. GIFs loop inline; ordinary videos have playback controls. Single images retain their complete aspect ratio so meme text is not cropped. Later captures add media to existing posts instead of hiding it behind an older empty media array.
+
+Issue imports also try X's public embed payload for the known post ID. It preserves the exact raw source text and payload separately from the displayed text, with the capture time. Saved quote posts, link cards and polls remain available. If this public source is unavailable, the original capture is kept. Enrich existing saved IDs with `node scripts/hydrate-posts.js --pending`; this is not an exhaustive account sync.
+
 The bookmarklet on a post page keeps visible own entries and Grok bodies. It records only explicit parent references and never guesses links from adjacent cards. Expand and load the intended public conversation before capture; off-screen/unloaded replies cannot be recovered by this script. Large captures download as complete JSON rather than being shortened to fit an issue URL:
 
 ```bash
@@ -74,3 +78,4 @@ Run `npm test` and `node scripts/privacy-guard.js` before committing. Tests cove
 X changes its markup now and then. If the bookmarklet stops finding posts, the selectors are at the bottom of `add.html`.
 
 MIT licensed.
+

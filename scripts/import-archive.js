@@ -4,6 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const {upsert}=require('./post-data.js');
+const Media=require('../media.js');
 
 const dir = process.argv[2];
 const withReplies = process.argv.includes('--replies');
@@ -47,9 +48,10 @@ for (const file of find('tweets')) {
       handle,
       text: decode(text),
       date: new Date(t.created_at).toISOString(),
-      media: media.filter(m => m.type === 'photo').map(m => m.media_url_https),
+      media: Media.fromEntities(media),
+      entities:t.entities,extendedEntities:t.extended_entities,card:t.card,poll:t.poll,
       replyToId:parentId,replyStatus:parentId?'reply':'post',textStatus:'complete',
-      source:{kind:'x-archive',file:path.basename(file),originalText:text0,originalDate:t.created_at,transformations:['HTML entity decoding']}
+      source:{kind:'x-archive',file:path.basename(file),originalText:text0,originalDate:t.created_at,originalPayload:t,transformations:['HTML entity decoding']}
     };
     if(parentId) post.inReplyTo={id:parentId,handle:parentHandle,url:`https://x.com/${parentHandle||'i/web'}/status/${parentId}`,media:[],missing:true};
     imported.push(post);
@@ -62,3 +64,4 @@ if (handle && !result.data.profile.handle) result.data.profile.handle = handle;
 if (handle && !result.data.profile.name) result.data.profile.name = handle;
 fs.writeFileSync('tweets.json', JSON.stringify(result.data, null, 2) + '\n');
 console.log(`Imported ${result.added} new entries; enriched ${result.updated} (${imported.length} archive entries after filters).`);
+
