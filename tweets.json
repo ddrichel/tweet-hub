@@ -21,16 +21,37 @@
       "text": "Humanity 2.0 Mythos starts as a Haiku on github",
       "date": "2026-10-14T16:36:33.000Z",
       "media": [],
-      "replyStatus": "post"
-    },
-    {
-      "id": "2110405152242901410",
-      "url": "https://x.com/DmitriyDrichel/status/2110405152242901410",
-      "handle": "DmitriyDrichel",
-      "text": "Humanity 2.0 Mythos started as a Haiku on github",
-      "date": "2026-10-14T16:19:32.000Z",
-      "media": [],
-      "replyStatus": "post"
+      "replyStatus": "post",
+      "editControl": {
+        "initial_tweet_id": "2110401949543584225",
+        "edit_tweet_ids": [
+          "2110401949543584225",
+          "2110405152242901410",
+          "2110409433859887272"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110401949543584225",
+          "url": "https://x.com/DmitriyDrichel/status/2110401949543584225",
+          "text": "Humanity 2.0 Mythos starts as a Haiku",
+          "date": "2026-10-14T16:06:48.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T10:20:59Z"
+          }
+        },
+        {
+          "id": "2110405152242901410",
+          "url": "https://x.com/DmitriyDrichel/status/2110405152242901410",
+          "text": "Humanity 2.0 Mythos started as a Haiku on github",
+          "date": "2026-10-14T16:19:32.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T10:20:59Z"
+          }
+        }
+      ]
     },
     {
       "id": "2110405024455012774",

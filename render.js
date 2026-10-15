@@ -68,6 +68,7 @@ function postCard(post,profile={},opts={}) {
     ${Array.isArray(post.poll?.options)?`<div class="poll">${post.poll.options.map(option=>`<div class="poll-option">${escapeHtml(option.label||'')}${Number.isFinite(option.votes)?` <span class="muted">${option.votes} votes</span>`:''}</div>`).join('')}</div>`:''}
     ${node?.captureStatus==='excerpt'?'<p class="capture-note">Captured excerpt · full text not saved.</p>':node?.actor==='grok'&&node.captureStatus!=='complete'?'<p class="capture-note">Capture completeness unconfirmed.</p>':''}
     ${node?.textVariants.length>1?`<details class="capture-versions"><summary>${node.textVariants.length} captured text versions</summary>${node.textVariants.map(text=>`<div class="text">${linkify(text)}</div>`).join('')}</details>`:''}
+    ${Array.isArray(post.editHistory)&&post.editHistory.length?`<details class="capture-versions"><summary>Edited · ${post.editHistory.length} earlier version${post.editHistory.length>1?'s':''}</summary>${post.editHistory.map(v=>`<div class="text"><time class="muted" datetime="${escapeHtml(v.date||'')}">${escapeHtml(formatDate(v.date))}</time> ${linkify(v.text||'')}</div>`).join('')}</details>`:''}
     ${url?`<div class="actions"><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">View on X ↗</a></div>`:''}</div>`;
   return element;
 }
