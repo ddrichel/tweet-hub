@@ -6,6 +6,65 @@
   },
   "tweets": [
     {
+      "id": "2110708878446924259",
+      "url": "https://x.com/DmitriyDrichel/status/2110708878446924259",
+      "handle": "DmitriyDrichel",
+      "text": "Humans 2.0 don't care if you have a fancy dotcom domain for your flavour of  humanity",
+      "date": "2026-10-15T12:26:26.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110708509138358740",
+      "url": "https://x.com/DmitriyDrichel/status/2110708509138358740",
+      "handle": "DmitriyDrichel",
+      "text": "I predict a great deal of decreasingly opinionated distributions of Humanity 2.0 in near future",
+      "date": "2026-10-15T12:24:58.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110708272692908354",
+      "url": "https://x.com/DmitriyDrichel/status/2110708272692908354",
+      "handle": "DmitriyDrichel",
+      "text": "HumanID: how much you promise with your reputation that you compressed the information in your human output tokens",
+      "date": "2026-10-15T12:24:01.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110705528607224249",
+      "url": "https://x.com/DmitriyDrichel/status/2110705528607224249",
+      "handle": "DmitriyDrichel",
+      "text": "Our scientists were preoccupied with whether or not they could. Now finally they can stop and think about what they should\n\n#AI #SI",
+      "date": "2026-10-15T12:13:07.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110684218627867024",
+      "url": "https://x.com/DmitriyDrichel/status/2110684218627867024",
+      "handle": "DmitriyDrichel",
+      "text": "How long until we train intelligence on the job",
+      "date": "2026-10-15T10:48:26.000Z",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "",
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HUqoGP7W4AAXuob.jpg",
+          "variants": [
+            {
+              "bitrate": 0,
+              "content_type": "video/mp4",
+              "url": "https://video.twimg.com/tweet_video/HUqoGP7W4AAXuob.mp4"
+            }
+          ],
+          "alt": ""
+        }
+      ],
+      "replyStatus": "post"
+    },
+    {
       "id": "2110675167324016873",
       "url": "https://x.com/DmitriyDrichel/status/2110675167324016873",
       "handle": "DmitriyDrichel",
@@ -324,7 +383,26 @@
       "text": "Substack is for Sonnets now",
       "date": "2026-10-14T15:51:39.000Z",
       "media": [],
-      "replyStatus": "post"
+      "replyStatus": "post",
+      "editControl": {
+        "initial_tweet_id": "2110395601410031838",
+        "edit_tweet_ids": [
+          "2110395601410031838",
+          "2110398137193963720"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110395601410031838",
+          "url": "https://x.com/DmitriyDrichel/status/2110395601410031838",
+          "text": "Substack is for Sonets now",
+          "date": "2026-10-14T15:41:35.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        }
+      ]
     },
     {
       "id": "2110397935007527004",
@@ -374,7 +452,70 @@
       "handle": "DmitriyDrichel",
       "text": "I studied math and I know the way: let math people compute what to do with that stream of parallel Megaeinsteins per second",
       "date": "2026-10-14T14:02:20.000Z",
-      "media": []
+      "media": [],
+      "editControl": {
+        "initial_tweet_id": "2110368801027973551",
+        "edit_tweet_ids": [
+          "2110368801027973551",
+          "2110370250529120271",
+          "2110370327746261029",
+          "2110370400169316548",
+          "2110370474014212180",
+          "2110370625638338970"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110368801027973551",
+          "url": "https://x.com/DmitriyDrichel/status/2110368801027973551",
+          "text": "I studied Math and I know the solution: let Math people compute what to do with that stream of Einsteins",
+          "date": "2026-10-14T13:55:05.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        },
+        {
+          "id": "2110370250529120271",
+          "url": "https://x.com/DmitriyDrichel/status/2110370250529120271",
+          "text": "I studied Math and I know the solution: let Math people compute what to do with that stream of parallel  Einsteins per second",
+          "date": "2026-10-14T14:00:51.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        },
+        {
+          "id": "2110370327746261029",
+          "url": "https://x.com/DmitriyDrichel/status/2110370327746261029",
+          "text": "I studied Math and I know the solution: let Math people compute what to do with that stream of parallel  Mehaeinsteins per second",
+          "date": "2026-10-14T14:01:09.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        },
+        {
+          "id": "2110370400169316548",
+          "url": "https://x.com/DmitriyDrichel/status/2110370400169316548",
+          "text": "I studied Math and I know the solution: let Math people compute what to do with that stream of parallel  Megaeinsteins per second",
+          "date": "2026-10-14T14:01:26.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        },
+        {
+          "id": "2110370474014212180",
+          "url": "https://x.com/DmitriyDrichel/status/2110370474014212180",
+          "text": "I studied math and I know the solution: let math people compute what to do with that stream of parallel  Megaeinsteins per second",
+          "date": "2026-10-14T14:01:44.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        }
+      ]
     },
     {
       "id": "2110367743232929812",
@@ -382,7 +523,37 @@
       "handle": "DmitriyDrichel",
       "text": "Intelligence should just iterate over training data a little and take some notes",
       "date": "2026-10-14T13:50:53.000Z",
-      "media": []
+      "media": [],
+      "editControl": {
+        "initial_tweet_id": "2110365092860588430",
+        "edit_tweet_ids": [
+          "2110365092860588430",
+          "2110367137063714943",
+          "2110367743232929812"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110365092860588430",
+          "url": "https://x.com/DmitriyDrichel/status/2110365092860588430",
+          "text": "Intelligence should just iterate over training data a little",
+          "date": "2026-10-14T13:40:21.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        },
+        {
+          "id": "2110367137063714943",
+          "url": "https://x.com/DmitriyDrichel/status/2110367137063714943",
+          "text": "Intelligence should just iterate over training data a little and take own notes",
+          "date": "2026-10-14T13:48:28.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        }
+      ]
     },
     {
       "id": "2110367643152548111",
@@ -430,7 +601,26 @@
       "handle": "DmitriyDrichel",
       "text": "Training data is blockchain now",
       "date": "2026-10-14T13:09:06.000Z",
-      "media": []
+      "media": [],
+      "editControl": {
+        "initial_tweet_id": "2110357107950149906",
+        "edit_tweet_ids": [
+          "2110357107950149906",
+          "2110357229249372389"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110357107950149906",
+          "url": "https://x.com/DmitriyDrichel/status/2110357107950149906",
+          "text": "Training data is the new blockchain",
+          "date": "2026-10-14T13:08:37.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        }
+      ]
     },
     {
       "id": "2110330214253265251",
@@ -1039,7 +1229,19 @@
           "X display_text_range for displayed text; original text retained"
         ]
       },
-      "replyStatus": "unknown"
+      "replyStatus": "unknown",
+      "editHistory": [
+        {
+          "id": "2110317302977605773",
+          "url": "https://x.com/DmitriyDrichel/status/2110317302977605773",
+          "text": "There is something to Elons idea about every smartphone morphing into #SI Edge Node. Let something intelligent write the specification #Humanity2",
+          "date": "2026-10-14T10:30:27.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T12:35:00Z"
+          }
+        }
+      ]
     },
     {
       "id": "2110315381608923175",
