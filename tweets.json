@@ -6,6 +6,44 @@
   },
   "tweets": [
     {
+      "id": "2110829950768963780",
+      "url": "https://x.com/DmitriyDrichel/status/2110829950768963780",
+      "handle": "DmitriyDrichel",
+      "text": "",
+      "date": "2026-10-15T20:27:32.000Z",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HUr3WtnWIAA9MFz.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/HUr3WtnWIAA9MFz.jpg",
+          "alt": "",
+          "original_info": {
+            "width": 1220,
+            "height": 2134
+          }
+        }
+      ],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110821008970002717",
+      "url": "https://x.com/DmitriyDrichel/status/2110821008970002717",
+      "handle": "DmitriyDrichel",
+      "text": "Everyone has multidimensional IKEA in their devices now #AI #Creativity",
+      "date": "2026-10-15T19:52:00.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110820212215861687",
+      "url": "https://x.com/DmitriyDrichel/status/2110820212215861687",
+      "handle": "DmitriyDrichel",
+      "text": "Kardashev scale 2.0: it's about a spacially compact intelligence economy, not spacially expansive energy economy\n\n#Futurism #Biometrics",
+      "date": "2026-10-15T19:48:50.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
       "id": "2110813406701797378",
       "url": "https://x.com/DmitriyDrichel/status/2110813406701797378",
       "handle": "DmitriyDrichel",
