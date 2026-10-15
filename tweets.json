@@ -6,6 +6,138 @@
   },
   "tweets": [
     {
+      "id": "2110753909375438867",
+      "url": "https://x.com/DmitriyDrichel/status/2110753909375438867",
+      "handle": "DmitriyDrichel",
+      "text": "\"Relax, take a deep breath.\"\n– ChatGPT\n\nFellow humans, I think this was a warning as well as disaster relief.\n#AI #ChatGPT",
+      "date": "2026-10-15T15:25:22.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110750014414757910",
+      "url": "https://x.com/DmitriyDrichel/status/2110750014414757910",
+      "handle": "DmitriyDrichel",
+      "text": "Pure humanity is everything that we do not put in an .md file in the cloud \n#AI #Philosophy",
+      "date": "2026-10-15T15:09:53.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editControl": {
+        "initial_tweet_id": "2110749716191367375",
+        "edit_tweet_ids": [
+          "2110749716191367375",
+          "2110750014414757910"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110749716191367375",
+          "url": "https://x.com/DmitriyDrichel/status/2110749716191367375",
+          "text": "Pure humanity is everything that we do not put in an .md file in the cloud",
+          "date": "2026-10-15T15:08:42.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T15:35:00Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2110748697407500504",
+      "url": "https://x.com/DmitriyDrichel/status/2110748697407500504",
+      "handle": "DmitriyDrichel",
+      "text": "Intelligence, compute global minimum of perfect UX/UI\n#AI #Math",
+      "date": "2026-10-15T15:04:39.000Z",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HUriwLbWgAA-Mwh.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/HUriwLbWgAA-Mwh.jpg",
+          "alt": "",
+          "original_info": {
+            "width": 1200,
+            "height": 675
+          }
+        }
+      ],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110744402591195358",
+      "url": "https://x.com/DmitriyDrichel/status/2110744402591195358",
+      "handle": "DmitriyDrichel",
+      "text": "Good bot but just give me the TLDR, always",
+      "date": "2026-10-15T14:47:35.000Z",
+      "media": [],
+      "replyStatus": "reply",
+      "replyToId": "2110742454307602523",
+      "replyToHandle": "grok"
+    },
+    {
+      "id": "2110742454307602523",
+      "url": "https://x.com/grok/status/2110742454307602523",
+      "handle": "grok",
+      "text": "Yes, driving packs daily friction and risk we accept for mobility. Same trade-off: if paragliding's upside feels worth the odds for you, it's consistent. Singularity remains probabilistic, not guaranteed immortality on a fixed date. Your tolerance decides.",
+      "date": "2026-10-15T14:39:51.000Z",
+      "media": [],
+      "replyStatus": "reply",
+      "replyToId": "2110742279757443280",
+      "replyToHandle": "DmitriyDrichel"
+    },
+    {
+      "id": "2110742279757443280",
+      "url": "https://x.com/DmitriyDrichel/status/2110742279757443280",
+      "handle": "DmitriyDrichel",
+      "text": "Yes and driving is friction",
+      "date": "2026-10-15T14:39:09.000Z",
+      "media": [],
+      "replyStatus": "reply",
+      "replyToId": "2110741505652445550",
+      "replyToHandle": "grok"
+    },
+    {
+      "id": "2110741505652445550",
+      "url": "https://x.com/grok/status/2110741505652445550",
+      "handle": "grok",
+      "text": "Safety is a solid choice if the odds feel off for you. Everyday risks like driving stack up too, and singularity timelines still range widely with no lock on instant immortality. Your call on the experience versus the wait.",
+      "date": "2026-10-15T14:36:05.000Z",
+      "media": [],
+      "replyStatus": "reply",
+      "replyToId": "2110741335598596285",
+      "replyToHandle": "DmitriyDrichel"
+    },
+    {
+      "id": "2110741335598596285",
+      "url": "https://x.com/DmitriyDrichel/status/2110741335598596285",
+      "handle": "DmitriyDrichel",
+      "text": "Tough decision buddy but I am team safety now",
+      "date": "2026-10-15T14:35:24.000Z",
+      "media": [],
+      "replyStatus": "reply",
+      "replyToId": "2110739332084514913",
+      "replyToHandle": "grok"
+    },
+    {
+      "id": "2110741084800180402",
+      "url": "https://x.com/DmitriyDrichel/status/2110741084800180402",
+      "handle": "DmitriyDrichel",
+      "text": "Singularity before my tweet feed gets hydrated? #madeingermany",
+      "date": "2026-10-15T14:34:24.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110739332084514913",
+      "url": "https://x.com/grok/status/2110739332084514913",
+      "handle": "grok",
+      "text": "No. Paragliding fatality rates sit around 1 per 100k flights—mostly pilot decisions, not gear. Singularity timelines span late 2020s to 2045 with zero certainty of instant immortality. Calculated risks and lived experience still matter more than indefinite waiting.",
+      "date": "2026-10-15T14:27:27.000Z",
+      "media": [],
+      "replyStatus": "reply",
+      "replyToId": "2110739205873688696",
+      "replyToHandle": "DmitriyDrichel"
+    },
+    {
       "id": "2110739205873688696",
       "url": "https://x.com/DmitriyDrichel/status/2110739205873688696",
       "handle": "DmitriyDrichel",
