@@ -6,6 +6,97 @@
   },
   "tweets": [
     {
+      "id": "2110783164775907388",
+      "url": "https://x.com/DmitriyDrichel/status/2110783164775907388",
+      "handle": "DmitriyDrichel",
+      "text": "Big data is small data now #BigData #AI",
+      "date": "2026-10-15T17:21:37.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110775228775493638",
+      "url": "https://x.com/DmitriyDrichel/status/2110775228775493638",
+      "handle": "DmitriyDrichel",
+      "text": "GitHub is humanity-as-a-harness now.\n#Accelerate #eacc #TechnoOptimism #AIAgents #OpenSource",
+      "date": "2026-10-15T16:50:05.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110773099943616807",
+      "url": "https://x.com/DmitriyDrichel/status/2110773099943616807",
+      "handle": "DmitriyDrichel",
+      "text": "We are all intelligencenauts now.\n#AI #Singularity #acceleration",
+      "date": "2026-10-15T16:41:37.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editHistory": [
+        {
+          "id": "2110772729813110911",
+          "url": "https://x.com/DmitriyDrichel/status/2110772729813110911",
+          "text": "We are all intelligencenauts now.\n#AI #Singularity",
+          "date": "2026-10-15T16:40:09.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T17:33:00Z"
+          }
+        }
+      ],
+      "editControl": {
+        "initial_tweet_id": "2110772729813110911",
+        "edit_tweet_ids": [
+          "2110772729813110911",
+          "2110773099943616807"
+        ]
+      }
+    },
+    {
+      "id": "2110771532557324697",
+      "url": "https://x.com/DmitriyDrichel/status/2110771532557324697",
+      "handle": "DmitriyDrichel",
+      "text": "",
+      "date": "2026-10-15T16:35:24.000Z",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "",
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HUr3g65WsAAeAtd.jpg",
+          "variants": [
+            {
+              "bitrate": 0,
+              "content_type": "video/mp4",
+              "url": "https://video.twimg.com/tweet_video/HUr3g65WsAAeAtd.mp4"
+            }
+          ],
+          "alt": ""
+        }
+      ],
+      "replyStatus": "reply",
+      "replyToId": "2110771354777604203",
+      "replyToHandle": "DmitriyDrichel"
+    },
+    {
+      "id": "2110771354777604203",
+      "url": "https://x.com/DmitriyDrichel/status/2110771354777604203",
+      "handle": "DmitriyDrichel",
+      "text": "Intelligence, build me an interface like the thing after the singularity in 2001: A Space Odyssey:\n\n#AI #UIDesign",
+      "date": "2026-10-15T16:34:41.000Z",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HUr3WtnWIAA9MFz.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/HUr3WtnWIAA9MFz.jpg",
+          "alt": "",
+          "original_info": {
+            "width": 1220,
+            "height": 2134
+          }
+        }
+      ],
+      "replyStatus": "post"
+    },
+    {
       "id": "2110767083919151436",
       "url": "https://x.com/DmitriyDrichel/status/2110767083919151436",
       "handle": "DmitriyDrichel",
@@ -81,6 +172,17 @@
         }
       ],
       "replyStatus": "post"
+    },
+    {
+      "id": "2110744516802076825",
+      "url": "https://x.com/grok/status/2110744516802076825",
+      "handle": "grok",
+      "text": "TLDR: Driving risks are accepted daily for mobility. Same logic applies to paragliding if the reward justifies it for you. Singularity is uncertain probability, not fixed immortality—your risk tolerance decides.",
+      "date": "2026-10-15T14:48:03.000Z",
+      "media": [],
+      "replyStatus": "reply",
+      "replyToId": "2110744402591195358",
+      "replyToHandle": "DmitriyDrichel"
     },
     {
       "id": "2110744402591195358",
