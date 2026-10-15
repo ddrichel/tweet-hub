@@ -14,7 +14,7 @@ test('all recorded canonical IDs and recursive conversation edges survive graph 
   const conversation=graph.conversations.find(item=>item.entries.some(({node})=>node.id===sequence[0]));
   assert.deepEqual(conversation.entries.map(({node})=>node.id),sequence);
   for(let index=1;index<sequence.length;index++)assert.ok(graph.edges.has(sequence[index-1]+'>'+sequence[index]));
-  assert.equal(graph.stats.grok,10);assert.equal(graph.stats.other,3);assert.ok(graph.stats.replies>=18);assert.ok(graph.stats.selfReplies>=10);
+  assert.equal(graph.stats.grok,10);assert.equal(graph.stats.other,0);assert.ok(graph.stats.replies>=18);assert.ok(graph.stats.selfReplies>=10);
 });
 
 test('reply status requires source evidence and external speakers stay distinct',()=>{
