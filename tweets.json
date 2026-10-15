@@ -6,6 +6,85 @@
   },
   "tweets": [
     {
+      "id": "2110739205873688696",
+      "url": "https://x.com/DmitriyDrichel/status/2110739205873688696",
+      "handle": "DmitriyDrichel",
+      "text": "Is #paragliding irresponsible until #singularity  @grok",
+      "date": "2026-10-15T14:26:56.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editControl": {
+        "initial_tweet_id": "2110739027150156122",
+        "edit_tweet_ids": [
+          "2110739027150156122",
+          "2110739205873688696"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110739027150156122",
+          "url": "https://x.com/DmitriyDrichel/status/2110739027150156122",
+          "text": "Is #paragliding until #singularity irresponsible now @grok",
+          "date": "2026-10-15T14:26:14.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T14:35:00Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2110729088029614401",
+      "url": "https://x.com/DmitriyDrichel/status/2110729088029614401",
+      "handle": "DmitriyDrichel",
+      "text": "Everything is a plaintext in the cloud now",
+      "date": "2026-10-15T13:46:44.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110727928728186950",
+      "url": "https://x.com/DmitriyDrichel/status/2110727928728186950",
+      "handle": "DmitriyDrichel",
+      "text": "Permission boundaries after a productive meeting with me and my intelligent ones #privacy #securitynews",
+      "date": "2026-10-15T13:42:08.000Z",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "",
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HUrP2qrWUAAg1hw.jpg",
+          "variants": [
+            {
+              "bitrate": 0,
+              "content_type": "video/mp4",
+              "url": "https://video.twimg.com/tweet_video/HUrP2qrWUAAg1hw.mp4"
+            }
+          ],
+          "alt": ""
+        }
+      ],
+      "replyStatus": "post",
+      "editControl": {
+        "initial_tweet_id": "2110727518005198920",
+        "edit_tweet_ids": [
+          "2110727518005198920",
+          "2110727928728186950"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110727518005198920",
+          "url": "https://x.com/DmitriyDrichel/status/2110727518005198920",
+          "text": "Privacy boundaries after a productive meeting with me and my intelligent ones #privacy #securitynews",
+          "date": "2026-10-15T13:40:30.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T14:35:00Z"
+          }
+        }
+      ]
+    },
+    {
       "id": "2110722506055127258",
       "url": "https://x.com/DmitriyDrichel/status/2110722506055127258",
       "handle": "DmitriyDrichel",
