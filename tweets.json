@@ -6,6 +6,224 @@
   },
   "tweets": [
     {
+      "id": "2110675167324016873",
+      "url": "https://x.com/DmitriyDrichel/status/2110675167324016873",
+      "handle": "DmitriyDrichel",
+      "text": "Obscurity is deprecated now",
+      "date": "2026-10-15T10:12:28.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110660496760123467",
+      "url": "https://x.com/DmitriyDrichel/status/2110660496760123467",
+      "handle": "DmitriyDrichel",
+      "text": "Unified field theory before Halloween?",
+      "date": "2026-10-15T09:14:11.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110494192883404926",
+      "url": "https://x.com/DmitriyDrichel/status/2110494192883404926",
+      "handle": "DmitriyDrichel",
+      "text": "Let's put our heads together and carpet bomb #OpenAI with a release of some real spectacular human math next week. Think very hard, make no mistakes.",
+      "date": "2026-10-14T22:13:21.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110488312184025389",
+      "url": "https://x.com/DmitriyDrichel/status/2110488312184025389",
+      "handle": "DmitriyDrichel",
+      "text": "These here might contain hallucinations by a human trained on legacy science\n\n#ai #si",
+      "date": "2026-10-14T21:49:59.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110487454725861506",
+      "url": "https://x.com/DmitriyDrichel/status/2110487454725861506",
+      "handle": "DmitriyDrichel",
+      "text": "Me, trying to explain the end of legacy math to my grandchildren #math #ai #si",
+      "date": "2026-10-14T21:46:34.000Z",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HUn1JxQXUAAqfto.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/HUn1JxQXUAAqfto.jpg",
+          "alt": "",
+          "original_info": {
+            "width": 1446,
+            "height": 1087
+          }
+        }
+      ],
+      "replyStatus": "post",
+      "editControl": {
+        "initial_tweet_id": "2110483194097066256",
+        "edit_tweet_ids": [
+          "2110483194097066256",
+          "2110483549627256844",
+          "2110487454725861506"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110483194097066256",
+          "url": "https://x.com/DmitriyDrichel/status/2110483194097066256",
+          "text": "Me, trying to explain legacy math to my grandchildren",
+          "date": "2026-10-14T21:29:39.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T10:23:05Z"
+          }
+        },
+        {
+          "id": "2110483549627256844",
+          "url": "https://x.com/DmitriyDrichel/status/2110483549627256844",
+          "text": "Me, trying to explain legacy math to my grandchildren #math #ai #si",
+          "date": "2026-10-14T21:31:03.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T10:23:05Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2110486103056695602",
+      "url": "https://x.com/DmitriyDrichel/status/2110486103056695602",
+      "handle": "DmitriyDrichel",
+      "text": "Technical specifications are just grunts and jazz hands now",
+      "date": "2026-10-14T21:41:12.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110476016179175535",
+      "url": "https://x.com/DmitriyDrichel/status/2110476016179175535",
+      "handle": "DmitriyDrichel",
+      "text": "Terence Tao at acceptance stage before Peter Scholze gets the memo?",
+      "date": "2026-10-14T21:01:07.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110466096025465270",
+      "url": "https://x.com/DmitriyDrichel/status/2110466096025465270",
+      "handle": "DmitriyDrichel",
+      "text": "Newton's first law of motion",
+      "date": "2026-10-14T20:21:42.000Z",
+      "media": [],
+      "replyStatus": "reply",
+      "replyToId": "2110387604160184345",
+      "replyToHandle": "adac127"
+    },
+    {
+      "id": "2110460579722748338",
+      "url": "https://x.com/DmitriyDrichel/status/2110460579722748338",
+      "handle": "DmitriyDrichel",
+      "text": "I legit computed that this time, it's different",
+      "date": "2026-10-14T19:59:47.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editControl": {
+        "initial_tweet_id": "2110455847323312550",
+        "edit_tweet_ids": [
+          "2110455847323312550",
+          "2110456004643057777",
+          "2110460579722748338"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110455847323312550",
+          "url": "https://x.com/DmitriyDrichel/status/2110455847323312550",
+          "text": "I legitimately computed that this  time, it's different",
+          "date": "2026-10-14T19:40:59.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T10:23:05Z"
+          }
+        },
+        {
+          "id": "2110456004643057777",
+          "url": "https://x.com/DmitriyDrichel/status/2110456004643057777",
+          "text": "I legitimately computed that this time, it's different",
+          "date": "2026-10-14T19:41:36.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T10:23:05Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2110439990786130016",
+      "url": "https://x.com/DmitriyDrichel/status/2110439990786130016",
+      "handle": "DmitriyDrichel",
+      "text": "How much surprisal per Megaeinstein today",
+      "date": "2026-10-14T18:37:58.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110437025291599926",
+      "url": "https://x.com/DmitriyDrichel/status/2110437025291599926",
+      "handle": "DmitriyDrichel",
+      "text": "Mathematicians' surprisal is just the signal that math 2.0 is now certified  intelligent",
+      "date": "2026-10-14T18:26:11.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110435897858548073",
+      "url": "https://x.com/DmitriyDrichel/status/2110435897858548073",
+      "handle": "DmitriyDrichel",
+      "text": "It's merely the New Kind of Science 2.0, this time New for real",
+      "date": "2026-10-14T18:21:42.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110426575951053142",
+      "url": "https://x.com/DmitriyDrichel/status/2110426575951053142",
+      "handle": "DmitriyDrichel",
+      "text": "Math has a real moonshot project now",
+      "date": "2026-10-14T17:44:40.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2110423608950423872",
+      "url": "https://x.com/DmitriyDrichel/status/2110423608950423872",
+      "handle": "DmitriyDrichel",
+      "text": "I am somewhat of a long-form writer myself now https://substack.com/@ddrichel/note/c-360955138",
+      "date": "2026-10-14T17:32:52.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editControl": {
+        "initial_tweet_id": "2110423533696262482",
+        "edit_tweet_ids": [
+          "2110423533696262482",
+          "2110423608950423872"
+        ]
+      },
+      "editHistory": [
+        {
+          "id": "2110423533696262482",
+          "url": "https://x.com/DmitriyDrichel/status/2110423533696262482",
+          "text": "I am somewhat of a long-form writer myself https://substack.com/@ddrichel/note/c-360955138",
+          "date": "2026-10-14T17:32:34.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-15T10:23:05Z"
+          }
+        }
+      ]
+    },
+    {
       "id": "2110420206124236849",
       "url": "https://x.com/DmitriyDrichel/status/2110420206124236849",
       "handle": "DmitriyDrichel",
