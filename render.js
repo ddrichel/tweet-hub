@@ -61,7 +61,7 @@ function postCard(post,profile={},opts={}) {
   element.innerHTML=`<div class="side">${avatar}${opts.line?'<div class="line"></div>':''}</div><div class="body">
     <div class="meta"><b>${escapeHtml(name)}</b><span class="muted">${handle?'@'+escapeHtml(handle):''}</span><time class="muted" datetime="${escapeHtml(post.date||'')}" title="${escapeHtml(post.date||'')}">${escapeHtml(formatDate(post.date))}</time></div>
     ${node?`<div class="post-kind ${node.actor==='grok'?'grok':''}">${escapeHtml(node.missing?'Parent not captured':Conversations.label(node))}</div>`:''}
-    ${parents.length?`<div class="reply-to">Replying to ${parents.map(parent=>`<a href="#${postElementId(parent.key)}">${parent.post.handle?'@'+escapeHtml(parent.post.handle):'post '+escapeHtml(parent.id||'')}</a>`).join(', ')}</div>`:node?.replyStatus==='reply'?'<div class="reply-to">Reply parent not captured.</div>':''}
+    ${parents.length?`<div class="reply-to">Replying to ${parents.map(parent=>{const h=parent.post.handle||parent.hintHandle||'';const label=h?'@'+escapeHtml(h):'a post';return parent.missing?`<a href="${escapeHtml('https://x.com/'+(h||'i/web')+'/status/'+(parent.id||''))}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`:`<a href="#${postElementId(parent.key)}">${label}</a>`;}).join(', ')}</div>`:node?.replyStatus==='reply'?'<div class="reply-to">Reply parent not captured.</div>':''}
     ${node?.missing?'<div class="text muted">Parent body not captured.</div>':typeof post.text==='string'?`<div class="text">${linkify(post.text)}</div>`:''}
     ${mediaHtml(Array.isArray(post.media)?post.media:[])}
     ${quoteHtml(post.quote||post.quotedTweet)}${cardHtml(post.card)}
@@ -74,14 +74,10 @@ function postCard(post,profile={},opts={}) {
 }
 function renderConversation(conversation,graph,filter='all') {
   const wrapper=document.createElement('section');wrapper.className='thread';wrapper.dataset.conversationId=conversation.id;
-  const saved=conversation.entries.filter(({node})=>!node.missing).length;
-  if(conversation.entries.length>1) {const heading=document.createElement('h2');heading.className='thread-heading';heading.textContent='Conversation · '+saved+' saved entries';wrapper.appendChild(heading);}
-  conversation.entries.forEach(({node},index)=>{const cls=node.missing?'context':Conversations.matches(node,filter)?'main':'context';wrapper.appendChild(postCard({...node.post,url:Conversations.nodesUrl(node)},graph.profile,{node,graph,cls,line:index<conversation.entries.length-1}));});
-  const actions=document.createElement('div');actions.className='thread-actions';
-  const button=document.createElement('button');button.className='copy-conversation';button.type='button';button.textContent=conversation.entries.length>1?'Copy conversation':'Copy entry';
-  const status=document.createElement('span');status.className='muted small';status.setAttribute('role','status');
-  button.onclick=async()=>{try{await navigator.clipboard.writeText(Conversations.transcript(conversation,graph));status.textContent='Copied';}catch{status.textContent='Clipboard unavailable';}};
-  actions.append(button,status);wrapper.appendChild(actions);return wrapper;
+  const shown=conversation.entries.filter(({node})=>!node.missing),saved=shown.length;
+  if(saved>1) {const heading=document.createElement('h2');heading.className='thread-heading';heading.textContent='Conversation · '+saved+' saved entries';wrapper.appendChild(heading);}
+  shown.forEach(({node},index)=>{const cls=Conversations.matches(node,filter)?'main':'context';wrapper.appendChild(postCard({...node.post,url:Conversations.nodesUrl(node)},graph.profile,{node,graph,cls,line:index<shown.length-1}));});
+  return wrapper;
 }
 function renderTweet(post,profile={}) {const graph=Conversations.build({profile,tweets:[post]});return renderConversation(graph.conversations[0],graph);}
 if(typeof module==='object' && module.exports) module.exports={escapeHtml,safeUrl,postUrl,linkify,formatDate,postCard,renderTweet,renderConversation,postElementId,mediaHtml,quoteHtml,cardHtml};
