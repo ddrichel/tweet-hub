@@ -6,6 +6,43 @@
   },
   "tweets": [
     {
+      "id": "2111111601193427229",
+      "url": "https://x.com/DmitriyDrichel/status/2111111601193427229",
+      "handle": "DmitriyDrichel",
+      "text": "Without friction, we will have #flow states in flow caves all the time\n\n#Singularity #Accelerate",
+      "date": "2026-10-16T15:06:42.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2111108795724161425",
+      "url": "https://x.com/DmitriyDrichel/status/2111108795724161425",
+      "handle": "DmitriyDrichel",
+      "text": "The intelligencepunk manifesto \n#AI #Accelerate",
+      "date": "2026-10-16T14:55:34.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editHistory": [
+        {
+          "id": "2111108383663153478",
+          "url": "https://x.com/DmitriyDrichel/status/2111108383663153478",
+          "text": "The intelligencepunk manifesto",
+          "date": "2026-10-16T14:53:55.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-16T15:33:00Z"
+          }
+        }
+      ],
+      "editControl": {
+        "initial_tweet_id": "2111108383663153478",
+        "edit_tweet_ids": [
+          "2111108383663153478",
+          "2111108795724161425"
+        ]
+      }
+    },
+    {
       "id": "2111100359561093312",
       "url": "https://x.com/DmitriyDrichel/status/2111100359561093312",
       "handle": "DmitriyDrichel",
