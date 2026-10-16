@@ -6,6 +6,48 @@
   },
   "tweets": [
     {
+      "id": "2111227430450991165",
+      "url": "https://x.com/DmitriyDrichel/status/2111227430450991165",
+      "handle": "DmitriyDrichel",
+      "text": "My agents' safe word is \"friction friction\". That is when they thought really hard about the bottlenecks in our collaboration and want me to adjust the interface",
+      "date": "2026-10-16T22:46:58.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "quote": {
+        "id": "2110397935007527004",
+        "url": "https://x.com/DmitriyDrichel/status/2110397935007527004",
+        "handle": "DmitriyDrichel"
+      },
+      "editHistory": [
+        {
+          "id": "2111227219712643302",
+          "url": "https://x.com/DmitriyDrichel/status/2111227219712643302",
+          "text": "My agents' safe word is \"friction friction\". That is when they thought really hard about the bottlenecks in our collaboration and want me to adjust the interface",
+          "date": "2026-10-16T22:46:08.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-16T23:35:00Z"
+          }
+        }
+      ],
+      "editControl": {
+        "initial_tweet_id": "2111227219712643302",
+        "edit_tweet_ids": [
+          "2111227219712643302",
+          "2111227430450991165"
+        ]
+      }
+    },
+    {
+      "id": "2111223927112708506",
+      "url": "https://x.com/DmitriyDrichel/status/2111223927112708506",
+      "handle": "DmitriyDrichel",
+      "text": "Researchers: still think AI is just a stochastic parrot? \n\nPlease do all of us a favour and take a few hours of your time.\n\nHave a serious debate with a frontier model about a topic you are passionate and knowledgeable about. Let it criticize your work, have a scientific debate.",
+      "date": "2026-10-16T22:33:03.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
       "id": "2111206818928296091",
       "url": "https://x.com/DmitriyDrichel/status/2111206818928296091",
       "handle": "DmitriyDrichel",
