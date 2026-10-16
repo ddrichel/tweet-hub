@@ -6,6 +6,54 @@
   },
   "tweets": [
     {
+      "id": "2111206818928296091",
+      "url": "https://x.com/DmitriyDrichel/status/2111206818928296091",
+      "handle": "DmitriyDrichel",
+      "text": "My opinion piece on the \"death\" of mathematics (spoiler: it was the best thing that ever happened to mathematics) https://substack.com/@ddrichel/note/c-360955138",
+      "date": "2026-10-16T21:25:04.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editHistory": [
+        {
+          "id": "2111206413590765964",
+          "url": "https://x.com/DmitriyDrichel/status/2111206413590765964",
+          "text": "My opinion piece on the \"death\" of mathematics https://substack.com/@ddrichel/note/c-360955138",
+          "date": "2026-10-16T21:23:27.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-16T21:35:00Z"
+          }
+        },
+        {
+          "id": "2111206628024348776",
+          "url": "https://x.com/DmitriyDrichel/status/2111206628024348776",
+          "text": "My opinion piece on the \"death\" of mathematics (spoiler: it was the best thing that ever happened to mathematics ) https://substack.com/@ddrichel/note/c-360955138",
+          "date": "2026-10-16T21:24:19.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-16T21:35:00Z"
+          }
+        }
+      ],
+      "editControl": {
+        "initial_tweet_id": "2111206413590765964",
+        "edit_tweet_ids": [
+          "2111206413590765964",
+          "2111206628024348776",
+          "2111206818928296091"
+        ]
+      }
+    },
+    {
+      "id": "2111202470298829145",
+      "url": "https://x.com/DmitriyDrichel/status/2111202470298829145",
+      "handle": "DmitriyDrichel",
+      "text": "Your X posts are now your proof-of-humanity Blockchain; the more spelling mistakes, the better \n#AI #SI",
+      "date": "2026-10-16T21:07:47.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
       "id": "2111167077700829329",
       "url": "https://x.com/DmitriyDrichel/status/2111167077700829329",
       "handle": "DmitriyDrichel",
