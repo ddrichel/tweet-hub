@@ -6,6 +6,46 @@
   },
   "tweets": [
     {
+      "id": "2111658398928248992",
+      "url": "https://x.com/DmitriyDrichel/status/2111658398928248992",
+      "handle": "DmitriyDrichel",
+      "text": "",
+      "date": "2026-10-18T03:19:29.000Z",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HU4eHyzW0AALQzJ.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/HU4eHyzW0AALQzJ.jpg",
+          "alt": "",
+          "original_info": {
+            "width": 1395,
+            "height": 1086
+          }
+        }
+      ],
+      "replyStatus": "reply",
+      "replyToId": "2111656395837710426",
+      "replyToHandle": "DmitriyDrichel"
+    },
+    {
+      "id": "2111658095378149455",
+      "url": "https://x.com/DmitriyDrichel/status/2111658095378149455",
+      "handle": "DmitriyDrichel",
+      "text": "#AI researches accidentally discovered the equivalent of the atomic theory of math and generated a few candidate \"math molecules\" (see 6th October #OpenAI math drop)\n\nBy academic standards, this was fair and square, and my academic reputation will die on this hill.\n\nWe can build the Grand Unified Theory of Intelligence to show in the end all the puzzle pieces can be assembled into one maximally logical and beautiful whole\n\n#math",
+      "date": "2026-10-18T03:18:17.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
+      "id": "2111656395837710426",
+      "url": "https://x.com/DmitriyDrichel/status/2111656395837710426",
+      "handle": "DmitriyDrichel",
+      "text": "Math is just data \n#math #data",
+      "date": "2026-10-18T03:11:32.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
       "id": "2111505408963559549",
       "url": "https://x.com/DmitriyDrichel/status/2111505408963559549",
       "handle": "DmitriyDrichel",
