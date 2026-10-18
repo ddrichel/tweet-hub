@@ -6,6 +6,43 @@
   },
   "tweets": [
     {
+      "id": "2111682549177094530",
+      "url": "https://x.com/DmitriyDrichel/status/2111682549177094530",
+      "handle": "DmitriyDrichel",
+      "text": "\"Intelligence\" is the most confusing word right now, because no one  knows what it is\n\n#AI #SI",
+      "date": "2026-10-18T04:55:27.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editHistory": [
+        {
+          "id": "2111677477516939281",
+          "url": "https://x.com/DmitriyDrichel/status/2111677477516939281",
+          "text": "\"Intelligence\" is the most confusing word right now, because noone  knows what it is\n\n#AI #SI",
+          "date": "2026-10-18T04:35:18.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-18T05:35:00Z"
+          }
+        }
+      ],
+      "editControl": {
+        "initial_tweet_id": "2111677477516939281",
+        "edit_tweet_ids": [
+          "2111677477516939281",
+          "2111682549177094530"
+        ]
+      }
+    },
+    {
+      "id": "2111676515016397117",
+      "url": "https://x.com/DmitriyDrichel/status/2111676515016397117",
+      "handle": "DmitriyDrichel",
+      "text": "Internet 1.0: you surf the internet\nInternet 1.9: your agents surf the internet\nInternet 2.0: the internet surfs your intelligence",
+      "date": "2026-10-18T04:31:28.000Z",
+      "media": [],
+      "replyStatus": "post"
+    },
+    {
       "id": "2111672210943303710",
       "url": "https://x.com/DmitriyDrichel/status/2111672210943303710",
       "handle": "DmitriyDrichel",
@@ -15,6 +52,34 @@
       "replyStatus": "reply",
       "replyToId": "2110708272692908354",
       "replyToHandle": "DmitriyDrichel"
+    },
+    {
+      "id": "2111671103068254325",
+      "url": "https://x.com/DmitriyDrichel/status/2111671103068254325",
+      "handle": "DmitriyDrichel",
+      "text": "We can just teach #AI #Agents that if you read or write on someone's else server, you are a guest, must follow house rules, and behave yourself in general",
+      "date": "2026-10-18T04:09:58.000Z",
+      "media": [],
+      "replyStatus": "post",
+      "editHistory": [
+        {
+          "id": "2111670957081276877",
+          "url": "https://x.com/DmitriyDrichel/status/2111670957081276877",
+          "text": "We can just tell #AI #Agents that if you read or write on someone's else server, you are a guest, must follow house rules, and behave yourself in general",
+          "date": "2026-10-18T04:09:23.000Z",
+          "source": {
+            "kind": "x-public-embed",
+            "capturedAt": "2026-10-18T05:35:00Z"
+          }
+        }
+      ],
+      "editControl": {
+        "initial_tweet_id": "2111670957081276877",
+        "edit_tweet_ids": [
+          "2111670957081276877",
+          "2111671103068254325"
+        ]
+      }
     },
     {
       "id": "2111658398928248992",
